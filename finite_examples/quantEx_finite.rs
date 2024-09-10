@@ -122,6 +122,9 @@ verus! {
     }
     
 
+//----------------------------------------------------------
+//                   --- EX 5 ----
+//----------------------------------------------------------
 
     spec fn less_than(x: int, y: int) -> bool {
         x < y
@@ -135,6 +138,9 @@ verus! {
         assert(x < y);
     }
 
+//----------------------------------------------------------
+//                   --- EX 6 (WIP) ----
+//----------------------------------------------------------
 
     spec fn f(i: int) -> bool;
 
@@ -146,15 +152,6 @@ verus! {
     }    
 
 
-    spec fn g() -> int;
-
-
-    proof fn test_exists_skol() {
-        // assert(is_even(0) || is_even(1) || is_even(2));
-        // assert(is_even(g()));
-        // assert(exists|i: int| #[trigger] is_even(i));  // succeeds with witness i = 4 or i = 6
-    }
-        
     fn main()
 
     {
