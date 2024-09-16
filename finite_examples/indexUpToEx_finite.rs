@@ -11,9 +11,8 @@ verus! {
 
 
 
-fn indexUpTo(n:u32) -> (f: Vec<u32>)
-    requires n == 3,
-    ensures f.len() == n, 
+fn indexUpTo() -> (f: Vec<u32>)
+    ensures f.len() == 3, 
              f[0] == 0,
 {
     let mut v: Vec<u32> = Vec::new();
@@ -22,44 +21,44 @@ fn indexUpTo(n:u32) -> (f: Vec<u32>)
     assert(v.len() == 1);
     assert(v[0] == 0);
     //
-    if(i < n){
+    if(i < 3){
         assert(i > 0);
         assert(v.len() == i);
         assert(v[0] == 0);
-        assert(i <= n);
+        assert(i <= 3);
         v.push(i);
         i = i + 1;  
     }
         assert(i > 0);
         assert(v.len() == i);
         assert(v[0] == 0);
-        assert(i <= n);
-    if(i < n){
+        assert(i <= 3);
+    if(i < 3){
         assert(i > 0);
         assert(v.len() == i);
         assert(v[0] == 0);
-        assert(i <= n);
+        assert(i <= 3);
         v.push(i);
         i = i + 1;  
         }
         assert(i > 0);
         assert(v.len() == i);
         assert(v[0] == 0);
-        assert(i <= n);
-    if(i < n){
+        assert(i <= 3);
+    if(i < 3){
         assert(i > 0);
         assert(v.len() == i);
         assert(v[0] == 0);
-        assert(i <= n);
+        assert(i <= 3);
         v.push(i);
         i = i + 1;  
     }
         assert(i > 0);
         assert(v.len() == i);
         assert(v[0] == 0);
-        assert(i <= n);
+        assert(i <= 3);
     
-    assert(v[n-1]!= 0);
+    assert(v[3-1]!= 0);
     return v;
 }
 
