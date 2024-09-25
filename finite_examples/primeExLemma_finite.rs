@@ -70,7 +70,7 @@ fn test_prime_finite_3() -> (result: bool)
     requires
         1 < 3,
     ensures
-        result == is_prime_F2(),
+        result == is_prime_F3(),
 {
     let mut factor: u64 = 2;
     if(factor < 3){

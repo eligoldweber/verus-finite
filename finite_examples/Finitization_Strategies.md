@@ -2,7 +2,9 @@
 
 [WIP] Manual heuristics for finitizing failed queries. These are meant to finitize failed queries, using the failed assertions as a reference to perform the finitization. 
 
-### Function Parameters
+The automation of finitiziation must trace backwards creating a call path from the failing verification condition to the initial caller and finitize everything (possible) between.
+
+### Function Parameters -- Push-Down
     
 Parameters become encoded with implicit universial quantifiers. To finitize function parameters, they should be **pushed down**.
 
@@ -70,7 +72,7 @@ For example with a vector `v == [1,2,3,4,5], k == 5` the finite query would retu
 
  
 
-### Quantifiers
+### Quantifiers -- Enumeration
 
 ##### Universal 
 Finitizing Universal quantifiers becomes just a conjunction expression. 
@@ -90,7 +92,7 @@ spec fn is_prime(candidate: nat) -> bool {
 fn main() { assert(is_prime(11));  //failing assertion}
 ```
 
-To finitize `forall|factor: nat| 1 < factor < candidate ==> !divides(factor, candidate)` for `assert(is_prime(11))` the expression would be an enumeration of all possible combinations of the forall in a conjunction. 
+To finitize `forall|factor: nat| 1 < factor < candidate ==> !divides(factor, candidate)` for `assert(is_prime(11))` the expression would be an **enumeration** of all possible combinations of the forall in a conjunction. 
 
 ```
 &&& !divides(2, 11) 
@@ -115,16 +117,16 @@ Consider:
     }
 ```
 
-Finitizing around the type if `int i`, this expression can be quantified as:
+Finitizing around the type if `int i`, this expression can be quantified as an **enumeration** of:
 
 ```
 assert(is_even(-1) || is_even(0) || is_even(1) || is_even(2));
 ```
 
 
-### Loops
+### Loops -- Unrolling
 
-Loops are unrolled -- the loop condition is checked with an if-statement, and the loop invariants (if there are any) are checked with assertions before and after each loop iteration. 
+Loops are **unrolled** -- the loop condition is checked with an if-statement, and the loop invariants (if there are any) are checked with assertions before and after each loop iteration. 
 
 ```
 fn indexUpTo(n:u32) -> (f: Vec<u32>)
@@ -211,7 +213,7 @@ fn indexUpTo() -> (f: Vec<u32>)
 
 ### Recursive Definitions
 
-Recursive definitions, like loops, are also unrolled into individial functions. 
+Recursive definitions, like loops, are also **unrolled** into individial functions. 
 
 ```
 spec fn triangle(n: nat) -> nat
