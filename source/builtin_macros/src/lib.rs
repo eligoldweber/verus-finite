@@ -7,6 +7,7 @@
     feature(proc_macro_diagnostic)
 )]
 
+use proc_macro::{Ident, TokenTree};
 #[cfg(verus_keep_ghost)]
 use std::sync::OnceLock;
 use synstructure::{decl_attribute, decl_derive};
@@ -22,6 +23,8 @@ mod rustdoc;
 mod struct_decl_inv;
 mod structural;
 mod topological_sort;
+use std::env;
+use syn_verus::visit_mut::VisitMut;
 
 decl_derive!([Structural] => structural::derive_structural);
 
@@ -85,9 +88,114 @@ pub fn verus_erase_ghost(input: proc_macro::TokenStream) -> proc_macro::TokenStr
     syntax::rewrite_items(input, EraseGhost::Erase, true)
 }
 
+fn is_user_function() -> bool {
+    let args: Vec<String> = env::args().collect();
+
+    let verus_keywords =
+        vec!["libbuiltin", "libbuiltin_macros", "vstd.rs", "--extern", "--is-vstd"];
+
+    let is_verus_build =
+        args.iter().any(|arg| verus_keywords.iter().any(|keyword| arg.contains(keyword)));
+
+    let is_user_code = args.iter().any(|arg| arg.ends_with(".rs"));
+
+    !is_verus_build && is_user_code
+}
+
+struct ReplaceSpecNatural;
+
+impl VisitMut for ReplaceSpecNatural {
+    fn visit_ident_mut(&mut self, ident: &mut syn::Ident) {
+        println!("{:?}", ident);
+    }
+}
+
+use prettyplease_verus::unparse_expr;
+use proc_macro2::TokenStream;
+use quote::ToTokens;
+use syn_verus::visit::visit_assert_forall;
+use syn_verus::AssertForall;
+use syn_verus::Expr;
+use syn_verus::File;
+
+struct TokenVisitor;
+
+impl VisitMut for TokenVisitor {
+    fn visit_expr_mut(&mut self, expr: &mut Expr) {
+        match expr {
+            // Match function calls
+            Expr::Call(call_expr) => {
+                // Check if the function being called is `builtin::forall`
+                if let Expr::Path(path) = call_expr.func.as_mut() {
+                    let segments = &mut path.path.segments;
+                    if segments.len() >= 2
+                        && segments[0].ident == "builtin"
+                        && segments[1].ident == "forall"
+                    {
+                        // Replace `forall` with `exists`
+                        segments[1].ident = syn::Ident::new("exists", segments[1].ident.span());
+
+                        // Print for debugging purposes
+                        let formatted = unparse_expr(expr);
+                        println!("Replaced forall with exists: {}", formatted);
+                    }
+                }
+                // Continue visiting subnodes
+                syn_verus::visit_mut::visit_expr_mut(self, expr);
+            }
+            _ => {
+                // For other expressions, continue visiting subnodes
+                syn_verus::visit_mut::visit_expr_mut(self, expr);
+            }
+        }
+    }
+}
+
+
+fn visit_rewritten_stream(
+    stream: proc_macro2::TokenStream,
+) -> Result<syn_verus::File, syn_verus::Error> {
+    let mut visitor = TokenVisitor;
+    // Parse the token stream into a `syn_verus::File`
+    if let Ok(mut ast) = syn_verus::parse2::<syn_verus::File>(stream) {
+        // Mutably visit the AST nodes, including `AssertForall`
+        visitor.visit_file_mut(&mut ast);
+        Ok(ast) // Return the modified AST
+    } else {
+        Err(syn_verus::Error::new(
+            proc_macro2::Span::call_site(),
+            "Failed to parse stream into AST",
+        ))
+    }
+}
+
 #[proc_macro]
 pub fn verus(input: proc_macro::TokenStream) -> proc_macro::TokenStream {
-    syntax::rewrite_items(input, cfg_erase(), true)
+    let old_stream = syntax::rewrite_items(input, cfg_erase(), true);
+
+    if !is_user_function() {
+        old_stream
+    } else {
+        println!("Before: {}", old_stream);
+        let modified = visit_rewritten_stream(old_stream.clone().into());
+
+        match modified {
+            Ok(ast) => {
+                let mut token_stream = TokenStream::new();
+                for item in &ast.items {
+                    item.to_tokens(&mut token_stream);
+                }
+
+                println!("Modified: {}", token_stream);
+
+                token_stream.into()
+            }
+            Err(e) => {
+                eprintln!("Error during AST modification: {}", e);
+                old_stream
+            }
+        }
+    }
 }
 
 #[proc_macro]

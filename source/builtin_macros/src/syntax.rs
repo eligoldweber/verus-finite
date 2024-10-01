@@ -3409,6 +3409,8 @@ pub(crate) fn rewrite_items(
     for item in items.items {
         item.to_tokens(&mut new_stream);
     }
+    // println!("New Stream: {}", new_stream);
+    // println!("New Stream Debug: {:?}", new_stream);
     proc_macro::TokenStream::from(new_stream)
 }
 

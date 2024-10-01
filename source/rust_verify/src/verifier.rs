@@ -2781,6 +2781,7 @@ impl rustc_driver::Callbacks for VerifierCallbacksEraseMacro {
             return rustc_driver::Compilation::Stop;
         }
 
+
         self.verifier.error_format = Some(compiler.sess.opts.error_format);
 
         // write_dep_info will internally check whether the `--emit=dep-info` flag is set
@@ -2818,6 +2819,7 @@ impl rustc_driver::Callbacks for VerifierCallbacksEraseMacro {
                 if self.verifier.args.trace {
                     reporter.report_now(&note_bare("preparing crate for verification").to_any());
                 }
+                println!("ran");
                 if let Err((err, mut diagnostics)) = self.verifier.construct_vir_crate(
                     tcx,
                     verus_items.clone(),
