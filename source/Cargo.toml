@@ -16,6 +16,7 @@ members = [
   "tools/internals_interface",
   "tools/line_count",
   "tools/qi-graph",
+  "verus-prover-assistant"
 ]
 exclude = [
   "vstd",

@@ -669,7 +669,7 @@ fn run() -> Result<(), String> {
     if !in_nextest {
         match (task, package.as_ref().map(|x| x.as_str())) {
             (Task::Run | Task::Test { .. }, Some("air")) => (),
-            (Task::Run, Some("rust_verify")) | (Task::Test { .. }, Some("rust_verify_test")) => {
+            (Task::Run, Some("rust_verify") | Some("verus-prover-assistant")) | (Task::Test { .. }, Some("rust_verify_test") | Some("verus-prover-assistant")) => {
                 let current_exe =
                     std::env::current_exe().expect("no path for the current executable");
                 let mut vargo = std::process::Command::new(current_exe);
