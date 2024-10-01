@@ -1,0 +1,3286 @@
+{
+  "packages": [
+    {
+      "name": "air",
+      "version": "0.1.0",
+      "id": "air 0.1.0 (path+file:///Users/flytre/Projects/verus-finite/source/air)",
+      "license": null,
+      "license_file": null,
+      "description": null,
+      "source": null,
+      "dependencies": [
+        {
+          "name": "getopts",
+          "source": "git+https://github.com/utaal/getopts.git?branch=parse-partial",
+          "req": "*",
+          "kind": null,
+          "rename": null,
+          "optional": false,
+          "uses_default_features": true,
+          "features": [],
+          "target": null,
+          "registry": null
+        },
+        {
+          "name": "indexmap",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "req": "^1",
+          "kind": null,
+          "rename": null,
+          "optional": false,
+          "uses_default_features": true,
+          "features": [],
+          "target": null,
+          "registry": null
+        },
+        {
+          "name": "serde",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "req": "^1",
+          "kind": null,
+          "rename": null,
+          "optional": false,
+          "uses_default_features": true,
+          "features": [
+            "derive",
+            "rc"
+          ],
+          "target": null,
+          "registry": null
+        },
+        {
+          "name": "sise",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "req": "^0.6.0",
+          "kind": null,
+          "rename": null,
+          "optional": false,
+          "uses_default_features": true,
+          "features": [],
+          "target": null,
+          "registry": null
+        },
+        {
+          "name": "yansi",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "req": "^0.5",
+          "kind": null,
+          "rename": null,
+          "optional": false,
+          "uses_default_features": true,
+          "features": [],
+          "target": null,
+          "registry": null
+        },
+        {
+          "name": "z3tracer",
+          "source": "git+https://github.com/verus-lang/smt2utils.git?rev=ec4c894d04d7cd39c9a8aa1eda51db71cc54fe61",
+          "req": "*",
+          "kind": null,
+          "rename": null,
+          "optional": false,
+          "uses_default_features": true,
+          "features": [],
+          "target": null,
+          "registry": null
+        },
+        {
+          "name": "win32job",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "req": "^1",
+          "kind": null,
+          "rename": null,
+          "optional": false,
+          "uses_default_features": true,
+          "features": [],
+          "target": "cfg(windows)",
+          "registry": null
+        }
+      ],
+      "targets": [
+        {
+          "kind": [
+            "lib"
+          ],
+          "crate_types": [
+            "lib"
+          ],
+          "name": "air",
+          "src_path": "/Users/flytre/Projects/verus-finite/source/air/src/lib.rs",
+          "edition": "2018",
+          "doc": true,
+          "doctest": true,
+          "test": true
+        },
+        {
+          "kind": [
+            "bin"
+          ],
+          "crate_types": [
+            "bin"
+          ],
+          "name": "air",
+          "src_path": "/Users/flytre/Projects/verus-finite/source/air/src/main.rs",
+          "edition": "2018",
+          "doc": true,
+          "doctest": false,
+          "test": true
+        }
+      ],
+      "features": {
+        "axiom-usage-info": [],
+        "singular": []
+      },
+      "manifest_path": "/Users/flytre/Projects/verus-finite/source/air/Cargo.toml",
+      "metadata": null,
+      "publish": null,
+      "authors": [],
+      "categories": [],
+      "keywords": [],
+      "readme": null,
+      "repository": null,
+      "homepage": null,
+      "documentation": null,
+      "edition": "2018",
+      "links": null,
+      "default_run": null,
+      "rust_version": null
+    },
+    {
+      "name": "builtin",
+      "version": "0.1.0",
+      "id": "builtin 0.1.0 (path+file:///Users/flytre/Projects/verus-finite/source/builtin)",
+      "license": null,
+      "license_file": null,
+      "description": null,
+      "source": null,
+      "dependencies": [],
+      "targets": [
+        {
+          "kind": [
+            "lib"
+          ],
+          "crate_types": [
+            "lib"
+          ],
+          "name": "builtin",
+          "src_path": "/Users/flytre/Projects/verus-finite/source/builtin/src/lib.rs",
+          "edition": "2018",
+          "doc": true,
+          "doctest": true,
+          "test": true
+        }
+      ],
+      "features": {},
+      "manifest_path": "/Users/flytre/Projects/verus-finite/source/builtin/Cargo.toml",
+      "metadata": null,
+      "publish": null,
+      "authors": [],
+      "categories": [],
+      "keywords": [],
+      "readme": null,
+      "repository": null,
+      "homepage": null,
+      "documentation": null,
+      "edition": "2018",
+      "links": null,
+      "default_run": null,
+      "rust_version": null
+    },
+    {
+      "name": "builtin_macros",
+      "version": "0.1.0",
+      "id": "builtin_macros 0.1.0 (path+file:///Users/flytre/Projects/verus-finite/source/builtin_macros)",
+      "license": null,
+      "license_file": null,
+      "description": null,
+      "source": null,
+      "dependencies": [
+        {
+          "name": "prettyplease_verus",
+          "source": null,
+          "req": "*",
+          "kind": null,
+          "rename": null,
+          "optional": false,
+          "uses_default_features": true,
+          "features": [],
+          "target": null,
+          "registry": null,
+          "path": "/Users/flytre/Projects/verus-finite/dependencies/prettyplease"
+        },
+        {
+          "name": "proc-macro2",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "req": "^1.0.39",
+          "kind": null,
+          "rename": null,
+          "optional": false,
+          "uses_default_features": true,
+          "features": [],
+          "target": null,
+          "registry": null
+        },
+        {
+          "name": "quote",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "req": "^1.0",
+          "kind": null,
+          "rename": null,
+          "optional": false,
+          "uses_default_features": true,
+          "features": [],
+          "target": null,
+          "registry": null
+        },
+        {
+          "name": "syn",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "req": "^1.0",
+          "kind": null,
+          "rename": null,
+          "optional": false,
+          "uses_default_features": true,
+          "features": [],
+          "target": null,
+          "registry": null
+        },
+        {
+          "name": "syn_verus",
+          "source": null,
+          "req": "*",
+          "kind": null,
+          "rename": null,
+          "optional": false,
+          "uses_default_features": true,
+          "features": [
+            "full",
+            "visit",
+            "visit-mut",
+            "extra-traits"
+          ],
+          "target": null,
+          "registry": null,
+          "path": "/Users/flytre/Projects/verus-finite/dependencies/syn"
+        },
+        {
+          "name": "synstructure",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "req": "^0.12",
+          "kind": null,
+          "rename": null,
+          "optional": false,
+          "uses_default_features": true,
+          "features": [],
+          "target": null,
+          "registry": null
+        }
+      ],
+      "targets": [
+        {
+          "kind": [
+            "proc-macro"
+          ],
+          "crate_types": [
+            "proc-macro"
+          ],
+          "name": "builtin_macros",
+          "src_path": "/Users/flytre/Projects/verus-finite/source/builtin_macros/src/lib.rs",
+          "edition": "2018",
+          "doc": true,
+          "doctest": true,
+          "test": true
+        }
+      ],
+      "features": {},
+      "manifest_path": "/Users/flytre/Projects/verus-finite/source/builtin_macros/Cargo.toml",
+      "metadata": null,
+      "publish": null,
+      "authors": [],
+      "categories": [],
+      "keywords": [],
+      "readme": null,
+      "repository": null,
+      "homepage": null,
+      "documentation": null,
+      "edition": "2018",
+      "links": null,
+      "default_run": null,
+      "rust_version": null
+    },
+    {
+      "name": "vir",
+      "version": "0.1.0",
+      "id": "vir 0.1.0 (path+file:///Users/flytre/Projects/verus-finite/source/vir)",
+      "license": null,
+      "license_file": null,
+      "description": null,
+      "source": null,
+      "dependencies": [
+        {
+          "name": "air",
+          "source": null,
+          "req": "*",
+          "kind": null,
+          "rename": null,
+          "optional": false,
+          "uses_default_features": true,
+          "features": [],
+          "target": null,
+          "registry": null,
+          "path": "/Users/flytre/Projects/verus-finite/source/air"
+        },
+        {
+          "name": "im",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "req": "^15.1.0",
+          "kind": null,
+          "rename": null,
+          "optional": false,
+          "uses_default_features": true,
+          "features": [],
+          "target": null,
+          "registry": null
+        },
+        {
+          "name": "indexmap",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "req": "^1",
+          "kind": null,
+          "rename": null,
+          "optional": false,
+          "uses_default_features": true,
+          "features": [],
+          "target": null,
+          "registry": null
+        },
+        {
+          "name": "num-bigint",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "req": "^0.4.4",
+          "kind": null,
+          "rename": null,
+          "optional": false,
+          "uses_default_features": true,
+          "features": [
+            "serde"
+          ],
+          "target": null,
+          "registry": null
+        },
+        {
+          "name": "num-traits",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "req": "^0.2.16",
+          "kind": null,
+          "rename": null,
+          "optional": false,
+          "uses_default_features": true,
+          "features": [],
+          "target": null,
+          "registry": null
+        },
+        {
+          "name": "serde",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "req": "^1",
+          "kind": null,
+          "rename": null,
+          "optional": false,
+          "uses_default_features": true,
+          "features": [
+            "derive",
+            "rc"
+          ],
+          "target": null,
+          "registry": null
+        },
+        {
+          "name": "sha2",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "req": "^0.10.2",
+          "kind": null,
+          "rename": null,
+          "optional": false,
+          "uses_default_features": true,
+          "features": [],
+          "target": null,
+          "registry": null
+        },
+        {
+          "name": "sise",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "req": "^0.6.0",
+          "kind": null,
+          "rename": null,
+          "optional": false,
+          "uses_default_features": true,
+          "features": [],
+          "target": null,
+          "registry": null
+        },
+        {
+          "name": "vir-macros",
+          "source": null,
+          "req": "*",
+          "kind": null,
+          "rename": null,
+          "optional": false,
+          "uses_default_features": true,
+          "features": [],
+          "target": null,
+          "registry": null,
+          "path": "/Users/flytre/Projects/verus-finite/source/vir_macros"
+        }
+      ],
+      "targets": [
+        {
+          "kind": [
+            "lib"
+          ],
+          "crate_types": [
+            "lib"
+          ],
+          "name": "vir",
+          "src_path": "/Users/flytre/Projects/verus-finite/source/vir/src/lib.rs",
+          "edition": "2018",
+          "doc": true,
+          "doctest": true,
+          "test": true
+        }
+      ],
+      "features": {
+        "axiom-usage-info": [
+          "air/axiom-usage-info"
+        ],
+        "singular": [
+          "air/singular"
+        ]
+      },
+      "manifest_path": "/Users/flytre/Projects/verus-finite/source/vir/Cargo.toml",
+      "metadata": null,
+      "publish": null,
+      "authors": [],
+      "categories": [],
+      "keywords": [],
+      "readme": null,
+      "repository": null,
+      "homepage": null,
+      "documentation": null,
+      "edition": "2018",
+      "links": null,
+      "default_run": null,
+      "rust_version": null
+    },
+    {
+      "name": "vir-macros",
+      "version": "0.1.0",
+      "id": "vir-macros 0.1.0 (path+file:///Users/flytre/Projects/verus-finite/source/vir_macros)",
+      "license": null,
+      "license_file": null,
+      "description": null,
+      "source": null,
+      "dependencies": [
+        {
+          "name": "proc-macro2",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "req": "*",
+          "kind": null,
+          "rename": null,
+          "optional": false,
+          "uses_default_features": true,
+          "features": [],
+          "target": null,
+          "registry": null
+        },
+        {
+          "name": "syn",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "req": "^1",
+          "kind": null,
+          "rename": null,
+          "optional": false,
+          "uses_default_features": true,
+          "features": [],
+          "target": null,
+          "registry": null
+        },
+        {
+          "name": "synstructure",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "req": "^0.12",
+          "kind": null,
+          "rename": null,
+          "optional": false,
+          "uses_default_features": true,
+          "features": [],
+          "target": null,
+          "registry": null
+        }
+      ],
+      "targets": [
+        {
+          "kind": [
+            "proc-macro"
+          ],
+          "crate_types": [
+            "proc-macro"
+          ],
+          "name": "vir-macros",
+          "src_path": "/Users/flytre/Projects/verus-finite/source/vir_macros/src/lib.rs",
+          "edition": "2018",
+          "doc": true,
+          "doctest": true,
+          "test": true
+        }
+      ],
+      "features": {},
+      "manifest_path": "/Users/flytre/Projects/verus-finite/source/vir_macros/Cargo.toml",
+      "metadata": null,
+      "publish": null,
+      "authors": [],
+      "categories": [],
+      "keywords": [],
+      "readme": null,
+      "repository": null,
+      "homepage": null,
+      "documentation": null,
+      "edition": "2018",
+      "links": null,
+      "default_run": null,
+      "rust_version": null
+    },
+    {
+      "name": "rust_verify",
+      "version": "0.1.0",
+      "id": "rust_verify 0.1.0 (path+file:///Users/flytre/Projects/verus-finite/source/rust_verify)",
+      "license": null,
+      "license_file": null,
+      "description": null,
+      "source": null,
+      "dependencies": [
+        {
+          "name": "air",
+          "source": null,
+          "req": "*",
+          "kind": null,
+          "rename": null,
+          "optional": false,
+          "uses_default_features": true,
+          "features": [],
+          "target": null,
+          "registry": null,
+          "path": "/Users/flytre/Projects/verus-finite/source/air"
+        },
+        {
+          "name": "bincode",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "req": "^1.0.1",
+          "kind": null,
+          "rename": null,
+          "optional": false,
+          "uses_default_features": true,
+          "features": [],
+          "target": null,
+          "registry": null
+        },
+        {
+          "name": "console",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "req": "^0.15",
+          "kind": null,
+          "rename": null,
+          "optional": false,
+          "uses_default_features": false,
+          "features": [
+            "ansi-parsing"
+          ],
+          "target": null,
+          "registry": null
+        },
+        {
+          "name": "getopts",
+          "source": "git+https://github.com/utaal/getopts.git?branch=parse-partial",
+          "req": "*",
+          "kind": null,
+          "rename": null,
+          "optional": false,
+          "uses_default_features": true,
+          "features": [],
+          "target": null,
+          "registry": null
+        },
+        {
+          "name": "indexmap",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "req": "^1",
+          "kind": null,
+          "rename": null,
+          "optional": false,
+          "uses_default_features": true,
+          "features": [],
+          "target": null,
+          "registry": null
+        },
+        {
+          "name": "indicatif",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "req": "^0.17.7",
+          "kind": null,
+          "rename": null,
+          "optional": false,
+          "uses_default_features": true,
+          "features": [],
+          "target": null,
+          "registry": null
+        },
+        {
+          "name": "internals_interface",
+          "source": null,
+          "req": "*",
+          "kind": null,
+          "rename": null,
+          "optional": false,
+          "uses_default_features": true,
+          "features": [],
+          "target": null,
+          "registry": null,
+          "path": "/Users/flytre/Projects/verus-finite/source/tools/internals_interface"
+        },
+        {
+          "name": "num-bigint",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "req": "^0.4.4",
+          "kind": null,
+          "rename": null,
+          "optional": false,
+          "uses_default_features": true,
+          "features": [],
+          "target": null,
+          "registry": null
+        },
+        {
+          "name": "num-format",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "req": "^0.4.0",
+          "kind": null,
+          "rename": null,
+          "optional": false,
+          "uses_default_features": true,
+          "features": [],
+          "target": null,
+          "registry": null
+        },
+        {
+          "name": "regex",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "req": "^1",
+          "kind": null,
+          "rename": null,
+          "optional": false,
+          "uses_default_features": true,
+          "features": [],
+          "target": null,
+          "registry": null
+        },
+        {
+          "name": "serde",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "req": "^1",
+          "kind": null,
+          "rename": null,
+          "optional": false,
+          "uses_default_features": true,
+          "features": [],
+          "target": null,
+          "registry": null
+        },
+        {
+          "name": "serde_json",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "req": ">=1.0.95",
+          "kind": null,
+          "rename": null,
+          "optional": false,
+          "uses_default_features": true,
+          "features": [
+            "preserve_order"
+          ],
+          "target": null,
+          "registry": null
+        },
+        {
+          "name": "sise",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "req": "^0.6.0",
+          "kind": null,
+          "rename": null,
+          "optional": false,
+          "uses_default_features": true,
+          "features": [],
+          "target": null,
+          "registry": null
+        },
+        {
+          "name": "vir",
+          "source": null,
+          "req": "*",
+          "kind": null,
+          "rename": null,
+          "optional": false,
+          "uses_default_features": true,
+          "features": [],
+          "target": null,
+          "registry": null,
+          "path": "/Users/flytre/Projects/verus-finite/source/vir"
+        },
+        {
+          "name": "rust_verify_test_macros",
+          "source": null,
+          "req": "*",
+          "kind": "dev",
+          "rename": null,
+          "optional": false,
+          "uses_default_features": true,
+          "features": [],
+          "target": null,
+          "registry": null,
+          "path": "/Users/flytre/Projects/verus-finite/source/rust_verify_test_macros"
+        },
+        {
+          "name": "win32job",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "req": "^1",
+          "kind": null,
+          "rename": null,
+          "optional": false,
+          "uses_default_features": true,
+          "features": [],
+          "target": "cfg(windows)",
+          "registry": null
+        }
+      ],
+      "targets": [
+        {
+          "kind": [
+            "lib"
+          ],
+          "crate_types": [
+            "lib"
+          ],
+          "name": "rust_verify",
+          "src_path": "/Users/flytre/Projects/verus-finite/source/rust_verify/src/lib.rs",
+          "edition": "2018",
+          "doc": true,
+          "doctest": true,
+          "test": true
+        },
+        {
+          "kind": [
+            "bin"
+          ],
+          "crate_types": [
+            "bin"
+          ],
+          "name": "rust_verify",
+          "src_path": "/Users/flytre/Projects/verus-finite/source/rust_verify/src/main.rs",
+          "edition": "2018",
+          "doc": true,
+          "doctest": false,
+          "test": true
+        }
+      ],
+      "features": {
+        "axiom-usage-info": [
+          "vir/axiom-usage-info",
+          "air/axiom-usage-info"
+        ],
+        "singular": [
+          "vir/singular",
+          "air/singular"
+        ]
+      },
+      "manifest_path": "/Users/flytre/Projects/verus-finite/source/rust_verify/Cargo.toml",
+      "metadata": {
+        "rust-analyzer": {
+          "rustc_private": true
+        }
+      },
+      "publish": null,
+      "authors": [],
+      "categories": [],
+      "keywords": [],
+      "readme": null,
+      "repository": null,
+      "homepage": null,
+      "documentation": null,
+      "edition": "2018",
+      "links": null,
+      "default_run": null,
+      "rust_version": null
+    },
+    {
+      "name": "internals_interface",
+      "version": "0.1.0",
+      "id": "internals_interface 0.1.0 (path+file:///Users/flytre/Projects/verus-finite/source/tools/internals_interface)",
+      "license": null,
+      "license_file": null,
+      "description": null,
+      "source": null,
+      "dependencies": [
+        {
+          "name": "bincode",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "req": "^1.0.1",
+          "kind": null,
+          "rename": null,
+          "optional": false,
+          "uses_default_features": true,
+          "features": [],
+          "target": null,
+          "registry": null
+        },
+        {
+          "name": "serde",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "req": "^1",
+          "kind": null,
+          "rename": null,
+          "optional": false,
+          "uses_default_features": true,
+          "features": [
+            "derive",
+            "rc"
+          ],
+          "target": null,
+          "registry": null
+        }
+      ],
+      "targets": [
+        {
+          "kind": [
+            "lib"
+          ],
+          "crate_types": [
+            "lib"
+          ],
+          "name": "internals_interface",
+          "src_path": "/Users/flytre/Projects/verus-finite/source/tools/internals_interface/src/lib.rs",
+          "edition": "2021",
+          "doc": true,
+          "doctest": true,
+          "test": true
+        }
+      ],
+      "features": {},
+      "manifest_path": "/Users/flytre/Projects/verus-finite/source/tools/internals_interface/Cargo.toml",
+      "metadata": null,
+      "publish": null,
+      "authors": [],
+      "categories": [],
+      "keywords": [],
+      "readme": null,
+      "repository": null,
+      "homepage": null,
+      "documentation": null,
+      "edition": "2021",
+      "links": null,
+      "default_run": null,
+      "rust_version": null
+    },
+    {
+      "name": "rust_verify_test_macros",
+      "version": "0.1.0",
+      "id": "rust_verify_test_macros 0.1.0 (path+file:///Users/flytre/Projects/verus-finite/source/rust_verify_test_macros)",
+      "license": null,
+      "license_file": null,
+      "description": null,
+      "source": null,
+      "dependencies": [
+        {
+          "name": "proc-macro2",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "req": "*",
+          "kind": null,
+          "rename": null,
+          "optional": false,
+          "uses_default_features": true,
+          "features": [],
+          "target": null,
+          "registry": null
+        },
+        {
+          "name": "quote",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "req": "*",
+          "kind": null,
+          "rename": null,
+          "optional": false,
+          "uses_default_features": true,
+          "features": [],
+          "target": null,
+          "registry": null
+        },
+        {
+          "name": "syn",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "req": "*",
+          "kind": null,
+          "rename": null,
+          "optional": false,
+          "uses_default_features": true,
+          "features": [],
+          "target": null,
+          "registry": null
+        }
+      ],
+      "targets": [
+        {
+          "kind": [
+            "proc-macro"
+          ],
+          "crate_types": [
+            "proc-macro"
+          ],
+          "name": "rust_verify_test_macros",
+          "src_path": "/Users/flytre/Projects/verus-finite/source/rust_verify_test_macros/src/lib.rs",
+          "edition": "2018",
+          "doc": true,
+          "doctest": true,
+          "test": true
+        }
+      ],
+      "features": {},
+      "manifest_path": "/Users/flytre/Projects/verus-finite/source/rust_verify_test_macros/Cargo.toml",
+      "metadata": null,
+      "publish": null,
+      "authors": [],
+      "categories": [],
+      "keywords": [],
+      "readme": null,
+      "repository": null,
+      "homepage": null,
+      "documentation": null,
+      "edition": "2018",
+      "links": null,
+      "default_run": null,
+      "rust_version": null
+    },
+    {
+      "name": "verus",
+      "version": "0.1.0",
+      "id": "verus 0.1.0 (path+file:///Users/flytre/Projects/verus-finite/source/verus)",
+      "license": null,
+      "license_file": null,
+      "description": null,
+      "source": null,
+      "dependencies": [
+        {
+          "name": "chrono",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "req": "^0.4.26",
+          "kind": null,
+          "rename": null,
+          "optional": false,
+          "uses_default_features": true,
+          "features": [],
+          "target": null,
+          "registry": null
+        },
+        {
+          "name": "git2",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "req": "^0.18",
+          "kind": null,
+          "rename": null,
+          "optional": true,
+          "uses_default_features": false,
+          "features": [],
+          "target": null,
+          "registry": null
+        },
+        {
+          "name": "is-terminal",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "req": "^0.4.9",
+          "kind": null,
+          "rename": null,
+          "optional": true,
+          "uses_default_features": true,
+          "features": [],
+          "target": null,
+          "registry": null
+        },
+        {
+          "name": "rand",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "req": "^0.8.0",
+          "kind": null,
+          "rename": null,
+          "optional": true,
+          "uses_default_features": true,
+          "features": [],
+          "target": null,
+          "registry": null
+        },
+        {
+          "name": "regex",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "req": "^1",
+          "kind": null,
+          "rename": null,
+          "optional": false,
+          "uses_default_features": true,
+          "features": [],
+          "target": null,
+          "registry": null
+        },
+        {
+          "name": "serde_json",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "req": "^1.0",
+          "kind": null,
+          "rename": null,
+          "optional": false,
+          "uses_default_features": true,
+          "features": [],
+          "target": null,
+          "registry": null
+        },
+        {
+          "name": "toml",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "req": "^0.7.4",
+          "kind": null,
+          "rename": null,
+          "optional": false,
+          "uses_default_features": true,
+          "features": [],
+          "target": null,
+          "registry": null
+        },
+        {
+          "name": "yansi",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "req": "^0.5",
+          "kind": null,
+          "rename": null,
+          "optional": false,
+          "uses_default_features": true,
+          "features": [],
+          "target": null,
+          "registry": null
+        },
+        {
+          "name": "zip",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "req": "^0.6.6",
+          "kind": null,
+          "rename": null,
+          "optional": false,
+          "uses_default_features": true,
+          "features": [],
+          "target": null,
+          "registry": null
+        },
+        {
+          "name": "regex",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "req": "^1",
+          "kind": "build",
+          "rename": null,
+          "optional": false,
+          "uses_default_features": true,
+          "features": [],
+          "target": null,
+          "registry": null
+        },
+        {
+          "name": "win32job",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "req": "^1",
+          "kind": null,
+          "rename": null,
+          "optional": false,
+          "uses_default_features": true,
+          "features": [],
+          "target": "cfg(windows)",
+          "registry": null
+        }
+      ],
+      "targets": [
+        {
+          "kind": [
+            "bin"
+          ],
+          "crate_types": [
+            "bin"
+          ],
+          "name": "verus",
+          "src_path": "/Users/flytre/Projects/verus-finite/source/verus/src/main.rs",
+          "edition": "2021",
+          "doc": true,
+          "doctest": false,
+          "test": true
+        },
+        {
+          "kind": [
+            "custom-build"
+          ],
+          "crate_types": [
+            "bin"
+          ],
+          "name": "build-script-build",
+          "src_path": "/Users/flytre/Projects/verus-finite/source/verus/build.rs",
+          "edition": "2021",
+          "doc": false,
+          "doctest": false,
+          "test": false
+        }
+      ],
+      "features": {
+        "default": [],
+        "git2": [
+          "dep:git2"
+        ],
+        "is-terminal": [
+          "dep:is-terminal"
+        ],
+        "rand": [
+          "dep:rand"
+        ],
+        "record-history": [
+          "git2",
+          "is-terminal",
+          "rand"
+        ]
+      },
+      "manifest_path": "/Users/flytre/Projects/verus-finite/source/verus/Cargo.toml",
+      "metadata": null,
+      "publish": null,
+      "authors": [],
+      "categories": [],
+      "keywords": [],
+      "readme": null,
+      "repository": null,
+      "homepage": null,
+      "documentation": null,
+      "edition": "2021",
+      "links": null,
+      "default_run": null,
+      "rust_version": null
+    },
+    {
+      "name": "rust_verify_test",
+      "version": "0.1.0",
+      "id": "rust_verify_test 0.1.0 (path+file:///Users/flytre/Projects/verus-finite/source/rust_verify_test)",
+      "license": null,
+      "license_file": null,
+      "description": null,
+      "source": null,
+      "dependencies": [
+        {
+          "name": "air",
+          "source": null,
+          "req": "*",
+          "kind": null,
+          "rename": null,
+          "optional": false,
+          "uses_default_features": true,
+          "features": [],
+          "target": null,
+          "registry": null,
+          "path": "/Users/flytre/Projects/verus-finite/source/air"
+        },
+        {
+          "name": "vir",
+          "source": null,
+          "req": "*",
+          "kind": null,
+          "rename": null,
+          "optional": false,
+          "uses_default_features": true,
+          "features": [],
+          "target": null,
+          "registry": null,
+          "path": "/Users/flytre/Projects/verus-finite/source/vir"
+        },
+        {
+          "name": "regex",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "req": "^1",
+          "kind": "dev",
+          "rename": null,
+          "optional": false,
+          "uses_default_features": true,
+          "features": [],
+          "target": null,
+          "registry": null
+        },
+        {
+          "name": "rust_verify_test_macros",
+          "source": null,
+          "req": "*",
+          "kind": "dev",
+          "rename": null,
+          "optional": false,
+          "uses_default_features": true,
+          "features": [],
+          "target": null,
+          "registry": null,
+          "path": "/Users/flytre/Projects/verus-finite/source/rust_verify_test_macros"
+        },
+        {
+          "name": "serde",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "req": "^1",
+          "kind": "dev",
+          "rename": null,
+          "optional": false,
+          "uses_default_features": true,
+          "features": [],
+          "target": null,
+          "registry": null
+        },
+        {
+          "name": "serde_json",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "req": "^1",
+          "kind": "dev",
+          "rename": null,
+          "optional": false,
+          "uses_default_features": true,
+          "features": [],
+          "target": null,
+          "registry": null
+        },
+        {
+          "name": "yansi",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "req": "^0.5",
+          "kind": "dev",
+          "rename": null,
+          "optional": false,
+          "uses_default_features": true,
+          "features": [],
+          "target": null,
+          "registry": null
+        }
+      ],
+      "targets": [
+        {
+          "kind": [
+            "test"
+          ],
+          "crate_types": [
+            "bin"
+          ],
+          "name": "external_type_specification",
+          "src_path": "/Users/flytre/Projects/verus-finite/source/rust_verify_test/tests/external_type_specification.rs",
+          "edition": "2018",
+          "doc": false,
+          "doctest": false,
+          "test": true
+        },
+        {
+          "kind": [
+            "test"
+          ],
+          "crate_types": [
+            "bin"
+          ],
+          "name": "control_flow",
+          "src_path": "/Users/flytre/Projects/verus-finite/source/rust_verify_test/tests/control_flow.rs",
+          "edition": "2018",
+          "doc": false,
+          "doctest": false,
+          "test": true
+        },
+        {
+          "kind": [
+            "test"
+          ],
+          "crate_types": [
+            "bin"
+          ],
+          "name": "closures",
+          "src_path": "/Users/flytre/Projects/verus-finite/source/rust_verify_test/tests/closures.rs",
+          "edition": "2018",
+          "doc": false,
+          "doctest": false,
+          "test": true
+        },
+        {
+          "kind": [
+            "test"
+          ],
+          "crate_types": [
+            "bin"
+          ],
+          "name": "std",
+          "src_path": "/Users/flytre/Projects/verus-finite/source/rust_verify_test/tests/std.rs",
+          "edition": "2018",
+          "doc": false,
+          "doctest": false,
+          "test": true
+        },
+        {
+          "kind": [
+            "test"
+          ],
+          "crate_types": [
+            "bin"
+          ],
+          "name": "assert_forall_by",
+          "src_path": "/Users/flytre/Projects/verus-finite/source/rust_verify_test/tests/assert_forall_by.rs",
+          "edition": "2018",
+          "doc": false,
+          "doctest": false,
+          "test": true
+        },
+        {
+          "kind": [
+            "test"
+          ],
+          "crate_types": [
+            "bin"
+          ],
+          "name": "consts",
+          "src_path": "/Users/flytre/Projects/verus-finite/source/rust_verify_test/tests/consts.rs",
+          "edition": "2018",
+          "doc": false,
+          "doctest": false,
+          "test": true
+        },
+        {
+          "kind": [
+            "test"
+          ],
+          "crate_types": [
+            "bin"
+          ],
+          "name": "modes",
+          "src_path": "/Users/flytre/Projects/verus-finite/source/rust_verify_test/tests/modes.rs",
+          "edition": "2018",
+          "doc": false,
+          "doctest": false,
+          "test": true
+        },
+        {
+          "kind": [
+            "test"
+          ],
+          "crate_types": [
+            "bin"
+          ],
+          "name": "dafny_axioms",
+          "src_path": "/Users/flytre/Projects/verus-finite/source/rust_verify_test/tests/dafny_axioms.rs",
+          "edition": "2018",
+          "doc": false,
+          "doctest": false,
+          "test": true
+        },
+        {
+          "kind": [
+            "test"
+          ],
+          "crate_types": [
+            "bin"
+          ],
+          "name": "adts",
+          "src_path": "/Users/flytre/Projects/verus-finite/source/rust_verify_test/tests/adts.rs",
+          "edition": "2018",
+          "doc": false,
+          "doctest": false,
+          "test": true
+        },
+        {
+          "kind": [
+            "test"
+          ],
+          "crate_types": [
+            "bin"
+          ],
+          "name": "literals",
+          "src_path": "/Users/flytre/Projects/verus-finite/source/rust_verify_test/tests/literals.rs",
+          "edition": "2018",
+          "doc": false,
+          "doctest": false,
+          "test": true
+        },
+        {
+          "kind": [
+            "test"
+          ],
+          "crate_types": [
+            "bin"
+          ],
+          "name": "adts_generics",
+          "src_path": "/Users/flytre/Projects/verus-finite/source/rust_verify_test/tests/adts_generics.rs",
+          "edition": "2018",
+          "doc": false,
+          "doctest": false,
+          "test": true
+        },
+        {
+          "kind": [
+            "test"
+          ],
+          "crate_types": [
+            "bin"
+          ],
+          "name": "overflow",
+          "src_path": "/Users/flytre/Projects/verus-finite/source/rust_verify_test/tests/overflow.rs",
+          "edition": "2018",
+          "doc": false,
+          "doctest": false,
+          "test": true
+        },
+        {
+          "kind": [
+            "test"
+          ],
+          "crate_types": [
+            "bin"
+          ],
+          "name": "recommends",
+          "src_path": "/Users/flytre/Projects/verus-finite/source/rust_verify_test/tests/recommends.rs",
+          "edition": "2018",
+          "doc": false,
+          "doctest": false,
+          "test": true
+        },
+        {
+          "kind": [
+            "test"
+          ],
+          "crate_types": [
+            "bin"
+          ],
+          "name": "integers",
+          "src_path": "/Users/flytre/Projects/verus-finite/source/rust_verify_test/tests/integers.rs",
+          "edition": "2018",
+          "doc": false,
+          "doctest": false,
+          "test": true
+        },
+        {
+          "kind": [
+            "test"
+          ],
+          "crate_types": [
+            "bin"
+          ],
+          "name": "layout",
+          "src_path": "/Users/flytre/Projects/verus-finite/source/rust_verify_test/tests/layout.rs",
+          "edition": "2018",
+          "doc": false,
+          "doctest": false,
+          "test": true
+        },
+        {
+          "kind": [
+            "test"
+          ],
+          "crate_types": [
+            "bin"
+          ],
+          "name": "ui",
+          "src_path": "/Users/flytre/Projects/verus-finite/source/rust_verify_test/tests/ui.rs",
+          "edition": "2018",
+          "doc": false,
+          "doctest": false,
+          "test": true
+        },
+        {
+          "kind": [
+            "test"
+          ],
+          "crate_types": [
+            "bin"
+          ],
+          "name": "recursive_types",
+          "src_path": "/Users/flytre/Projects/verus-finite/source/rust_verify_test/tests/recursive_types.rs",
+          "edition": "2018",
+          "doc": false,
+          "doctest": false,
+          "test": true
+        },
+        {
+          "kind": [
+            "test"
+          ],
+          "crate_types": [
+            "bin"
+          ],
+          "name": "assoc_type_impls",
+          "src_path": "/Users/flytre/Projects/verus-finite/source/rust_verify_test/tests/assoc_type_impls.rs",
+          "edition": "2018",
+          "doc": false,
+          "doctest": false,
+          "test": true
+        },
+        {
+          "kind": [
+            "test"
+          ],
+          "crate_types": [
+            "bin"
+          ],
+          "name": "broadcast_forall",
+          "src_path": "/Users/flytre/Projects/verus-finite/source/rust_verify_test/tests/broadcast_forall.rs",
+          "edition": "2018",
+          "doc": false,
+          "doctest": false,
+          "test": true
+        },
+        {
+          "kind": [
+            "test"
+          ],
+          "crate_types": [
+            "bin"
+          ],
+          "name": "when_used_as_spec",
+          "src_path": "/Users/flytre/Projects/verus-finite/source/rust_verify_test/tests/when_used_as_spec.rs",
+          "edition": "2018",
+          "doc": false,
+          "doctest": false,
+          "test": true
+        },
+        {
+          "kind": [
+            "test"
+          ],
+          "crate_types": [
+            "bin"
+          ],
+          "name": "size_of",
+          "src_path": "/Users/flytre/Projects/verus-finite/source/rust_verify_test/tests/size_of.rs",
+          "edition": "2018",
+          "doc": false,
+          "doctest": false,
+          "test": true
+        },
+        {
+          "kind": [
+            "test"
+          ],
+          "crate_types": [
+            "bin"
+          ],
+          "name": "prophecy",
+          "src_path": "/Users/flytre/Projects/verus-finite/source/rust_verify_test/tests/prophecy.rs",
+          "edition": "2018",
+          "doc": false,
+          "doctest": false,
+          "test": true
+        },
+        {
+          "kind": [
+            "test"
+          ],
+          "crate_types": [
+            "bin"
+          ],
+          "name": "summer_school",
+          "src_path": "/Users/flytre/Projects/verus-finite/source/rust_verify_test/tests/summer_school.rs",
+          "edition": "2018",
+          "doc": false,
+          "doctest": false,
+          "test": true
+        },
+        {
+          "kind": [
+            "test"
+          ],
+          "crate_types": [
+            "bin"
+          ],
+          "name": "triggers",
+          "src_path": "/Users/flytre/Projects/verus-finite/source/rust_verify_test/tests/triggers.rs",
+          "edition": "2018",
+          "doc": false,
+          "doctest": false,
+          "test": true
+        },
+        {
+          "kind": [
+            "test"
+          ],
+          "crate_types": [
+            "bin"
+          ],
+          "name": "external_fn_specification",
+          "src_path": "/Users/flytre/Projects/verus-finite/source/rust_verify_test/tests/external_fn_specification.rs",
+          "edition": "2018",
+          "doc": false,
+          "doctest": false,
+          "test": true
+        },
+        {
+          "kind": [
+            "test"
+          ],
+          "crate_types": [
+            "bin"
+          ],
+          "name": "traits_extend_ensures",
+          "src_path": "/Users/flytre/Projects/verus-finite/source/rust_verify_test/tests/traits_extend_ensures.rs",
+          "edition": "2018",
+          "doc": false,
+          "doctest": false,
+          "test": true
+        },
+        {
+          "kind": [
+            "test"
+          ],
+          "crate_types": [
+            "bin"
+          ],
+          "name": "raw_ptrs",
+          "src_path": "/Users/flytre/Projects/verus-finite/source/rust_verify_test/tests/raw_ptrs.rs",
+          "edition": "2018",
+          "doc": false,
+          "doctest": false,
+          "test": true
+        },
+        {
+          "kind": [
+            "test"
+          ],
+          "crate_types": [
+            "bin"
+          ],
+          "name": "quantifiers",
+          "src_path": "/Users/flytre/Projects/verus-finite/source/rust_verify_test/tests/quantifiers.rs",
+          "edition": "2018",
+          "doc": false,
+          "doctest": false,
+          "test": true
+        },
+        {
+          "kind": [
+            "test"
+          ],
+          "crate_types": [
+            "bin"
+          ],
+          "name": "regression",
+          "src_path": "/Users/flytre/Projects/verus-finite/source/rust_verify_test/tests/regression.rs",
+          "edition": "2018",
+          "doc": false,
+          "doctest": false,
+          "test": true
+        },
+        {
+          "kind": [
+            "test"
+          ],
+          "crate_types": [
+            "bin"
+          ],
+          "name": "choose",
+          "src_path": "/Users/flytre/Projects/verus-finite/source/rust_verify_test/tests/choose.rs",
+          "edition": "2018",
+          "doc": false,
+          "doctest": false,
+          "test": true
+        },
+        {
+          "kind": [
+            "test"
+          ],
+          "crate_types": [
+            "bin"
+          ],
+          "name": "results",
+          "src_path": "/Users/flytre/Projects/verus-finite/source/rust_verify_test/tests/results.rs",
+          "edition": "2018",
+          "doc": false,
+          "doctest": false,
+          "test": true
+        },
+        {
+          "kind": [
+            "test"
+          ],
+          "crate_types": [
+            "bin"
+          ],
+          "name": "atomics",
+          "src_path": "/Users/flytre/Projects/verus-finite/source/rust_verify_test/tests/atomics.rs",
+          "edition": "2018",
+          "doc": false,
+          "doctest": false,
+          "test": true
+        },
+        {
+          "kind": [
+            "test"
+          ],
+          "crate_types": [
+            "bin"
+          ],
+          "name": "adts_opaque",
+          "src_path": "/Users/flytre/Projects/verus-finite/source/rust_verify_test/tests/adts_opaque.rs",
+          "edition": "2018",
+          "doc": false,
+          "doctest": false,
+          "test": true
+        },
+        {
+          "kind": [
+            "test"
+          ],
+          "crate_types": [
+            "bin"
+          ],
+          "name": "arrays",
+          "src_path": "/Users/flytre/Projects/verus-finite/source/rust_verify_test/tests/arrays.rs",
+          "edition": "2018",
+          "doc": false,
+          "doctest": false,
+          "test": true
+        },
+        {
+          "kind": [
+            "test"
+          ],
+          "crate_types": [
+            "bin"
+          ],
+          "name": "bitvector",
+          "src_path": "/Users/flytre/Projects/verus-finite/source/rust_verify_test/tests/bitvector.rs",
+          "edition": "2018",
+          "doc": false,
+          "doctest": false,
+          "test": true
+        },
+        {
+          "kind": [
+            "test"
+          ],
+          "crate_types": [
+            "bin"
+          ],
+          "name": "assert_by_compute",
+          "src_path": "/Users/flytre/Projects/verus-finite/source/rust_verify_test/tests/assert_by_compute.rs",
+          "edition": "2018",
+          "doc": false,
+          "doctest": false,
+          "test": true
+        },
+        {
+          "kind": [
+            "test"
+          ],
+          "crate_types": [
+            "bin"
+          ],
+          "name": "functions",
+          "src_path": "/Users/flytre/Projects/verus-finite/source/rust_verify_test/tests/functions.rs",
+          "edition": "2018",
+          "doc": false,
+          "doctest": false,
+          "test": true
+        },
+        {
+          "kind": [
+            "test"
+          ],
+          "crate_types": [
+            "bin"
+          ],
+          "name": "exec_closures",
+          "src_path": "/Users/flytre/Projects/verus-finite/source/rust_verify_test/tests/exec_closures.rs",
+          "edition": "2018",
+          "doc": false,
+          "doctest": false,
+          "test": true
+        },
+        {
+          "kind": [
+            "test"
+          ],
+          "crate_types": [
+            "bin"
+          ],
+          "name": "structural",
+          "src_path": "/Users/flytre/Projects/verus-finite/source/rust_verify_test/tests/structural.rs",
+          "edition": "2018",
+          "doc": false,
+          "doctest": false,
+          "test": true
+        },
+        {
+          "kind": [
+            "test"
+          ],
+          "crate_types": [
+            "bin"
+          ],
+          "name": "harness",
+          "src_path": "/Users/flytre/Projects/verus-finite/source/rust_verify_test/tests/harness.rs",
+          "edition": "2018",
+          "doc": false,
+          "doctest": false,
+          "test": true
+        },
+        {
+          "kind": [
+            "test"
+          ],
+          "crate_types": [
+            "bin"
+          ],
+          "name": "fndef_types",
+          "src_path": "/Users/flytre/Projects/verus-finite/source/rust_verify_test/tests/fndef_types.rs",
+          "edition": "2018",
+          "doc": false,
+          "doctest": false,
+          "test": true
+        },
+        {
+          "kind": [
+            "test"
+          ],
+          "crate_types": [
+            "bin"
+          ],
+          "name": "maps",
+          "src_path": "/Users/flytre/Projects/verus-finite/source/rust_verify_test/tests/maps.rs",
+          "edition": "2018",
+          "doc": false,
+          "doctest": false,
+          "test": true
+        },
+        {
+          "kind": [
+            "test"
+          ],
+          "crate_types": [
+            "bin"
+          ],
+          "name": "nonlinear",
+          "src_path": "/Users/flytre/Projects/verus-finite/source/rust_verify_test/tests/nonlinear.rs",
+          "edition": "2018",
+          "doc": false,
+          "doctest": false,
+          "test": true
+        },
+        {
+          "kind": [
+            "test"
+          ],
+          "crate_types": [
+            "bin"
+          ],
+          "name": "open_invariant",
+          "src_path": "/Users/flytre/Projects/verus-finite/source/rust_verify_test/tests/open_invariant.rs",
+          "edition": "2018",
+          "doc": false,
+          "doctest": false,
+          "test": true
+        },
+        {
+          "kind": [
+            "test"
+          ],
+          "crate_types": [
+            "bin"
+          ],
+          "name": "lifetime",
+          "src_path": "/Users/flytre/Projects/verus-finite/source/rust_verify_test/tests/lifetime.rs",
+          "edition": "2018",
+          "doc": false,
+          "doctest": false,
+          "test": true
+        },
+        {
+          "kind": [
+            "test"
+          ],
+          "crate_types": [
+            "bin"
+          ],
+          "name": "strings",
+          "src_path": "/Users/flytre/Projects/verus-finite/source/rust_verify_test/tests/strings.rs",
+          "edition": "2018",
+          "doc": false,
+          "doctest": false,
+          "test": true
+        },
+        {
+          "kind": [
+            "test"
+          ],
+          "crate_types": [
+            "bin"
+          ],
+          "name": "scope",
+          "src_path": "/Users/flytre/Projects/verus-finite/source/rust_verify_test/tests/scope.rs",
+          "edition": "2018",
+          "doc": false,
+          "doctest": false,
+          "test": true
+        },
+        {
+          "kind": [
+            "test"
+          ],
+          "crate_types": [
+            "bin"
+          ],
+          "name": "generics",
+          "src_path": "/Users/flytre/Projects/verus-finite/source/rust_verify_test/tests/generics.rs",
+          "edition": "2018",
+          "doc": false,
+          "doctest": false,
+          "test": true
+        },
+        {
+          "kind": [
+            "test"
+          ],
+          "crate_types": [
+            "bin"
+          ],
+          "name": "seqs",
+          "src_path": "/Users/flytre/Projects/verus-finite/source/rust_verify_test/tests/seqs.rs",
+          "edition": "2018",
+          "doc": false,
+          "doctest": false,
+          "test": true
+        },
+        {
+          "kind": [
+            "test"
+          ],
+          "crate_types": [
+            "bin"
+          ],
+          "name": "return",
+          "src_path": "/Users/flytre/Projects/verus-finite/source/rust_verify_test/tests/return.rs",
+          "edition": "2018",
+          "doc": false,
+          "doctest": false,
+          "test": true
+        },
+        {
+          "kind": [
+            "test"
+          ],
+          "crate_types": [
+            "bin"
+          ],
+          "name": "expand_errors",
+          "src_path": "/Users/flytre/Projects/verus-finite/source/rust_verify_test/tests/expand_errors.rs",
+          "edition": "2018",
+          "doc": false,
+          "doctest": false,
+          "test": true
+        },
+        {
+          "kind": [
+            "test"
+          ],
+          "crate_types": [
+            "bin"
+          ],
+          "name": "atomic_lib",
+          "src_path": "/Users/flytre/Projects/verus-finite/source/rust_verify_test/tests/atomic_lib.rs",
+          "edition": "2018",
+          "doc": false,
+          "doctest": false,
+          "test": true
+        },
+        {
+          "kind": [
+            "test"
+          ],
+          "crate_types": [
+            "bin"
+          ],
+          "name": "match",
+          "src_path": "/Users/flytre/Projects/verus-finite/source/rust_verify_test/tests/match.rs",
+          "edition": "2018",
+          "doc": false,
+          "doctest": false,
+          "test": true
+        },
+        {
+          "kind": [
+            "test"
+          ],
+          "crate_types": [
+            "bin"
+          ],
+          "name": "user_defined_type_invariants",
+          "src_path": "/Users/flytre/Projects/verus-finite/source/rust_verify_test/tests/user_defined_type_invariants.rs",
+          "edition": "2018",
+          "doc": false,
+          "doctest": false,
+          "test": true
+        },
+        {
+          "kind": [
+            "test"
+          ],
+          "crate_types": [
+            "bin"
+          ],
+          "name": "inline",
+          "src_path": "/Users/flytre/Projects/verus-finite/source/rust_verify_test/tests/inline.rs",
+          "edition": "2018",
+          "doc": false,
+          "doctest": false,
+          "test": true
+        },
+        {
+          "kind": [
+            "test"
+          ],
+          "crate_types": [
+            "bin"
+          ],
+          "name": "opaque_reveal",
+          "src_path": "/Users/flytre/Projects/verus-finite/source/rust_verify_test/tests/opaque_reveal.rs",
+          "edition": "2018",
+          "doc": false,
+          "doctest": false,
+          "test": true
+        },
+        {
+          "kind": [
+            "test"
+          ],
+          "crate_types": [
+            "bin"
+          ],
+          "name": "multiset",
+          "src_path": "/Users/flytre/Projects/verus-finite/source/rust_verify_test/tests/multiset.rs",
+          "edition": "2018",
+          "doc": false,
+          "doctest": false,
+          "test": true
+        },
+        {
+          "kind": [
+            "test"
+          ],
+          "crate_types": [
+            "bin"
+          ],
+          "name": "erase",
+          "src_path": "/Users/flytre/Projects/verus-finite/source/rust_verify_test/tests/erase.rs",
+          "edition": "2018",
+          "doc": false,
+          "doctest": false,
+          "test": true
+        },
+        {
+          "kind": [
+            "test"
+          ],
+          "crate_types": [
+            "bin"
+          ],
+          "name": "errors",
+          "src_path": "/Users/flytre/Projects/verus-finite/source/rust_verify_test/tests/errors.rs",
+          "edition": "2018",
+          "doc": false,
+          "doctest": false,
+          "test": true
+        },
+        {
+          "kind": [
+            "test"
+          ],
+          "crate_types": [
+            "bin"
+          ],
+          "name": "modules",
+          "src_path": "/Users/flytre/Projects/verus-finite/source/rust_verify_test/tests/modules.rs",
+          "edition": "2018",
+          "doc": false,
+          "doctest": false,
+          "test": true
+        },
+        {
+          "kind": [
+            "test"
+          ],
+          "crate_types": [
+            "bin"
+          ],
+          "name": "impl",
+          "src_path": "/Users/flytre/Projects/verus-finite/source/rust_verify_test/tests/impl.rs",
+          "edition": "2018",
+          "doc": false,
+          "doctest": false,
+          "test": true
+        },
+        {
+          "kind": [
+            "test"
+          ],
+          "crate_types": [
+            "bin"
+          ],
+          "name": "traits_modules_pub_crate",
+          "src_path": "/Users/flytre/Projects/verus-finite/source/rust_verify_test/tests/traits_modules_pub_crate.rs",
+          "edition": "2018",
+          "doc": false,
+          "doctest": false,
+          "test": true
+        },
+        {
+          "kind": [
+            "test"
+          ],
+          "crate_types": [
+            "bin"
+          ],
+          "name": "sets",
+          "src_path": "/Users/flytre/Projects/verus-finite/source/rust_verify_test/tests/sets.rs",
+          "edition": "2018",
+          "doc": false,
+          "doctest": false,
+          "test": true
+        },
+        {
+          "kind": [
+            "test"
+          ],
+          "crate_types": [
+            "bin"
+          ],
+          "name": "state_machines",
+          "src_path": "/Users/flytre/Projects/verus-finite/source/rust_verify_test/tests/state_machines.rs",
+          "edition": "2018",
+          "doc": false,
+          "doctest": false,
+          "test": true
+        },
+        {
+          "kind": [
+            "test"
+          ],
+          "crate_types": [
+            "bin"
+          ],
+          "name": "recursion",
+          "src_path": "/Users/flytre/Projects/verus-finite/source/rust_verify_test/tests/recursion.rs",
+          "edition": "2018",
+          "doc": false,
+          "doctest": false,
+          "test": true
+        },
+        {
+          "kind": [
+            "test"
+          ],
+          "crate_types": [
+            "bin"
+          ],
+          "name": "slices",
+          "src_path": "/Users/flytre/Projects/verus-finite/source/rust_verify_test/tests/slices.rs",
+          "edition": "2018",
+          "doc": false,
+          "doctest": false,
+          "test": true
+        },
+        {
+          "kind": [
+            "test"
+          ],
+          "crate_types": [
+            "bin"
+          ],
+          "name": "unwind",
+          "src_path": "/Users/flytre/Projects/verus-finite/source/rust_verify_test/tests/unwind.rs",
+          "edition": "2018",
+          "doc": false,
+          "doctest": false,
+          "test": true
+        },
+        {
+          "kind": [
+            "test"
+          ],
+          "crate_types": [
+            "bin"
+          ],
+          "name": "traits_modules",
+          "src_path": "/Users/flytre/Projects/verus-finite/source/rust_verify_test/tests/traits_modules.rs",
+          "edition": "2018",
+          "doc": false,
+          "doctest": false,
+          "test": true
+        },
+        {
+          "kind": [
+            "test"
+          ],
+          "crate_types": [
+            "bin"
+          ],
+          "name": "examples",
+          "src_path": "/Users/flytre/Projects/verus-finite/source/rust_verify_test/tests/examples.rs",
+          "edition": "2018",
+          "doc": false,
+          "doctest": false,
+          "test": true
+        },
+        {
+          "kind": [
+            "test"
+          ],
+          "crate_types": [
+            "bin"
+          ],
+          "name": "loops_no_spinoff",
+          "src_path": "/Users/flytre/Projects/verus-finite/source/rust_verify_test/tests/loops_no_spinoff.rs",
+          "edition": "2018",
+          "doc": false,
+          "doctest": false,
+          "test": true
+        },
+        {
+          "kind": [
+            "test"
+          ],
+          "crate_types": [
+            "bin"
+          ],
+          "name": "partial_eq",
+          "src_path": "/Users/flytre/Projects/verus-finite/source/rust_verify_test/tests/partial_eq.rs",
+          "edition": "2018",
+          "doc": false,
+          "doctest": false,
+          "test": true
+        },
+        {
+          "kind": [
+            "test"
+          ],
+          "crate_types": [
+            "bin"
+          ],
+          "name": "marker_traits",
+          "src_path": "/Users/flytre/Projects/verus-finite/source/rust_verify_test/tests/marker_traits.rs",
+          "edition": "2018",
+          "doc": false,
+          "doctest": false,
+          "test": true
+        },
+        {
+          "kind": [
+            "test"
+          ],
+          "crate_types": [
+            "bin"
+          ],
+          "name": "ext_equal",
+          "src_path": "/Users/flytre/Projects/verus-finite/source/rust_verify_test/tests/ext_equal.rs",
+          "edition": "2018",
+          "doc": false,
+          "doctest": false,
+          "test": true
+        },
+        {
+          "kind": [
+            "test"
+          ],
+          "crate_types": [
+            "bin"
+          ],
+          "name": "refs",
+          "src_path": "/Users/flytre/Projects/verus-finite/source/rust_verify_test/tests/refs.rs",
+          "edition": "2018",
+          "doc": false,
+          "doctest": false,
+          "test": true
+        },
+        {
+          "kind": [
+            "test"
+          ],
+          "crate_types": [
+            "bin"
+          ],
+          "name": "traits",
+          "src_path": "/Users/flytre/Projects/verus-finite/source/rust_verify_test/tests/traits.rs",
+          "edition": "2018",
+          "doc": false,
+          "doctest": false,
+          "test": true
+        },
+        {
+          "kind": [
+            "test"
+          ],
+          "crate_types": [
+            "bin"
+          ],
+          "name": "integer_ring",
+          "src_path": "/Users/flytre/Projects/verus-finite/source/rust_verify_test/tests/integer_ring.rs",
+          "edition": "2018",
+          "doc": false,
+          "doctest": false,
+          "test": true
+        },
+        {
+          "kind": [
+            "test"
+          ],
+          "crate_types": [
+            "bin"
+          ],
+          "name": "cell_lib",
+          "src_path": "/Users/flytre/Projects/verus-finite/source/rust_verify_test/tests/cell_lib.rs",
+          "edition": "2018",
+          "doc": false,
+          "doctest": false,
+          "test": true
+        },
+        {
+          "kind": [
+            "test"
+          ],
+          "crate_types": [
+            "bin"
+          ],
+          "name": "calc",
+          "src_path": "/Users/flytre/Projects/verus-finite/source/rust_verify_test/tests/calc.rs",
+          "edition": "2018",
+          "doc": false,
+          "doctest": false,
+          "test": true
+        },
+        {
+          "kind": [
+            "test"
+          ],
+          "crate_types": [
+            "bin"
+          ],
+          "name": "hash",
+          "src_path": "/Users/flytre/Projects/verus-finite/source/rust_verify_test/tests/hash.rs",
+          "edition": "2018",
+          "doc": false,
+          "doctest": false,
+          "test": true
+        },
+        {
+          "kind": [
+            "test"
+          ],
+          "crate_types": [
+            "bin"
+          ],
+          "name": "loops",
+          "src_path": "/Users/flytre/Projects/verus-finite/source/rust_verify_test/tests/loops.rs",
+          "edition": "2018",
+          "doc": false,
+          "doctest": false,
+          "test": true
+        },
+        {
+          "kind": [
+            "test"
+          ],
+          "crate_types": [
+            "bin"
+          ],
+          "name": "unions",
+          "src_path": "/Users/flytre/Projects/verus-finite/source/rust_verify_test/tests/unions.rs",
+          "edition": "2018",
+          "doc": false,
+          "doctest": false,
+          "test": true
+        },
+        {
+          "kind": [
+            "test"
+          ],
+          "crate_types": [
+            "bin"
+          ],
+          "name": "external_traits",
+          "src_path": "/Users/flytre/Projects/verus-finite/source/rust_verify_test/tests/external_traits.rs",
+          "edition": "2018",
+          "doc": false,
+          "doctest": false,
+          "test": true
+        },
+        {
+          "kind": [
+            "test"
+          ],
+          "crate_types": [
+            "bin"
+          ],
+          "name": "z3_restart",
+          "src_path": "/Users/flytre/Projects/verus-finite/source/rust_verify_test/tests/z3_restart.rs",
+          "edition": "2018",
+          "doc": false,
+          "doctest": false,
+          "test": true
+        },
+        {
+          "kind": [
+            "test"
+          ],
+          "crate_types": [
+            "bin"
+          ],
+          "name": "basic",
+          "src_path": "/Users/flytre/Projects/verus-finite/source/rust_verify_test/tests/basic.rs",
+          "edition": "2018",
+          "doc": false,
+          "doctest": false,
+          "test": true
+        },
+        {
+          "kind": [
+            "test"
+          ],
+          "crate_types": [
+            "bin"
+          ],
+          "name": "unsafe",
+          "src_path": "/Users/flytre/Projects/verus-finite/source/rust_verify_test/tests/unsafe.rs",
+          "edition": "2018",
+          "doc": false,
+          "doctest": false,
+          "test": true
+        },
+        {
+          "kind": [
+            "test"
+          ],
+          "crate_types": [
+            "bin"
+          ],
+          "name": "expr_stmts",
+          "src_path": "/Users/flytre/Projects/verus-finite/source/rust_verify_test/tests/expr_stmts.rs",
+          "edition": "2018",
+          "doc": false,
+          "doctest": false,
+          "test": true
+        },
+        {
+          "kind": [
+            "test"
+          ],
+          "crate_types": [
+            "bin"
+          ],
+          "name": "assert_bitvector_by",
+          "src_path": "/Users/flytre/Projects/verus-finite/source/rust_verify_test/tests/assert_bitvector_by.rs",
+          "edition": "2018",
+          "doc": false,
+          "doctest": false,
+          "test": true
+        }
+      ],
+      "features": {
+        "singular": [
+          "vir/singular",
+          "air/singular"
+        ]
+      },
+      "manifest_path": "/Users/flytre/Projects/verus-finite/source/rust_verify_test/Cargo.toml",
+      "metadata": {
+        "rust-analyzer": {
+          "rustc_private": true
+        }
+      },
+      "publish": null,
+      "authors": [],
+      "categories": [],
+      "keywords": [],
+      "readme": null,
+      "repository": null,
+      "homepage": null,
+      "documentation": null,
+      "edition": "2018",
+      "links": null,
+      "default_run": null,
+      "rust_version": null
+    },
+    {
+      "name": "state_machines_macros",
+      "version": "0.1.0",
+      "id": "state_machines_macros 0.1.0 (path+file:///Users/flytre/Projects/verus-finite/source/state_machines_macros)",
+      "license": null,
+      "license_file": null,
+      "description": null,
+      "source": null,
+      "dependencies": [
+        {
+          "name": "indexmap",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "req": "^1",
+          "kind": null,
+          "rename": null,
+          "optional": false,
+          "uses_default_features": true,
+          "features": [],
+          "target": null,
+          "registry": null
+        },
+        {
+          "name": "proc-macro2",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "req": "^1.0",
+          "kind": null,
+          "rename": null,
+          "optional": false,
+          "uses_default_features": true,
+          "features": [],
+          "target": null,
+          "registry": null
+        },
+        {
+          "name": "quote",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "req": "^1.0",
+          "kind": null,
+          "rename": null,
+          "optional": false,
+          "uses_default_features": true,
+          "features": [],
+          "target": null,
+          "registry": null
+        },
+        {
+          "name": "syn_verus",
+          "source": null,
+          "req": "*",
+          "kind": null,
+          "rename": null,
+          "optional": false,
+          "uses_default_features": true,
+          "features": [
+            "full",
+            "visit",
+            "visit-mut",
+            "extra-traits"
+          ],
+          "target": null,
+          "registry": null,
+          "path": "/Users/flytre/Projects/verus-finite/dependencies/syn"
+        }
+      ],
+      "targets": [
+        {
+          "kind": [
+            "proc-macro"
+          ],
+          "crate_types": [
+            "proc-macro"
+          ],
+          "name": "state_machines_macros",
+          "src_path": "/Users/flytre/Projects/verus-finite/source/state_machines_macros/src/lib.rs",
+          "edition": "2018",
+          "doc": true,
+          "doctest": true,
+          "test": true
+        }
+      ],
+      "features": {},
+      "manifest_path": "/Users/flytre/Projects/verus-finite/source/state_machines_macros/Cargo.toml",
+      "metadata": null,
+      "publish": null,
+      "authors": [],
+      "categories": [],
+      "keywords": [],
+      "readme": null,
+      "repository": null,
+      "homepage": null,
+      "documentation": null,
+      "edition": "2018",
+      "links": null,
+      "default_run": null,
+      "rust_version": null
+    },
+    {
+      "name": "verusdoc",
+      "version": "0.1.0",
+      "id": "verusdoc 0.1.0 (path+file:///Users/flytre/Projects/verus-finite/source/verusdoc)",
+      "license": null,
+      "license_file": null,
+      "description": null,
+      "source": null,
+      "dependencies": [
+        {
+          "name": "html5ever",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "req": "^0.25.2",
+          "kind": null,
+          "rename": null,
+          "optional": false,
+          "uses_default_features": true,
+          "features": [],
+          "target": null,
+          "registry": null
+        },
+        {
+          "name": "kuchiki",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "req": "^0.8.1",
+          "kind": null,
+          "rename": null,
+          "optional": false,
+          "uses_default_features": true,
+          "features": [],
+          "target": null,
+          "registry": null
+        },
+        {
+          "name": "serde",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "req": "^1.0",
+          "kind": null,
+          "rename": null,
+          "optional": false,
+          "uses_default_features": true,
+          "features": [
+            "derive"
+          ],
+          "target": null,
+          "registry": null
+        },
+        {
+          "name": "serde_json",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "req": "^1.0",
+          "kind": null,
+          "rename": null,
+          "optional": false,
+          "uses_default_features": true,
+          "features": [],
+          "target": null,
+          "registry": null
+        },
+        {
+          "name": "walkdir",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "req": "^2.3.2",
+          "kind": null,
+          "rename": null,
+          "optional": false,
+          "uses_default_features": true,
+          "features": [],
+          "target": null,
+          "registry": null
+        }
+      ],
+      "targets": [
+        {
+          "kind": [
+            "bin"
+          ],
+          "crate_types": [
+            "bin"
+          ],
+          "name": "verusdoc",
+          "src_path": "/Users/flytre/Projects/verus-finite/source/verusdoc/src/main.rs",
+          "edition": "2018",
+          "doc": true,
+          "doctest": false,
+          "test": true
+        }
+      ],
+      "features": {},
+      "manifest_path": "/Users/flytre/Projects/verus-finite/source/verusdoc/Cargo.toml",
+      "metadata": null,
+      "publish": null,
+      "authors": [],
+      "categories": [],
+      "keywords": [],
+      "readme": null,
+      "repository": null,
+      "homepage": null,
+      "documentation": null,
+      "edition": "2018",
+      "links": null,
+      "default_run": null,
+      "rust_version": null
+    },
+    {
+      "name": "vstd_build",
+      "version": "0.1.0",
+      "id": "vstd_build 0.1.0 (path+file:///Users/flytre/Projects/verus-finite/source/vstd_build)",
+      "license": null,
+      "license_file": null,
+      "description": null,
+      "source": null,
+      "dependencies": [
+        {
+          "name": "yansi",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "req": "^0.5",
+          "kind": null,
+          "rename": null,
+          "optional": false,
+          "uses_default_features": true,
+          "features": [],
+          "target": null,
+          "registry": null
+        }
+      ],
+      "targets": [
+        {
+          "kind": [
+            "bin"
+          ],
+          "crate_types": [
+            "bin"
+          ],
+          "name": "vstd_build",
+          "src_path": "/Users/flytre/Projects/verus-finite/source/vstd_build/src/main.rs",
+          "edition": "2018",
+          "doc": true,
+          "doctest": false,
+          "test": true
+        }
+      ],
+      "features": {},
+      "manifest_path": "/Users/flytre/Projects/verus-finite/source/vstd_build/Cargo.toml",
+      "metadata": null,
+      "publish": null,
+      "authors": [],
+      "categories": [],
+      "keywords": [],
+      "readme": null,
+      "repository": null,
+      "homepage": null,
+      "documentation": null,
+      "edition": "2018",
+      "links": null,
+      "default_run": null,
+      "rust_version": null
+    },
+    {
+      "name": "line_count",
+      "version": "0.1.0",
+      "id": "line_count 0.1.0 (path+file:///Users/flytre/Projects/verus-finite/source/tools/line_count)",
+      "license": null,
+      "license_file": null,
+      "description": null,
+      "source": null,
+      "dependencies": [
+        {
+          "name": "getopts",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "req": "*",
+          "kind": null,
+          "rename": null,
+          "optional": false,
+          "uses_default_features": true,
+          "features": [],
+          "target": null,
+          "registry": null
+        },
+        {
+          "name": "prettyplease_verus",
+          "source": null,
+          "req": "*",
+          "kind": null,
+          "rename": null,
+          "optional": false,
+          "uses_default_features": true,
+          "features": [],
+          "target": null,
+          "registry": null,
+          "path": "/Users/flytre/Projects/verus-finite/dependencies/prettyplease"
+        },
+        {
+          "name": "proc-macro2",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "req": "^1.0.39",
+          "kind": null,
+          "rename": null,
+          "optional": false,
+          "uses_default_features": false,
+          "features": [],
+          "target": null,
+          "registry": null
+        },
+        {
+          "name": "regex",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "req": "^1.10",
+          "kind": null,
+          "rename": null,
+          "optional": false,
+          "uses_default_features": true,
+          "features": [],
+          "target": null,
+          "registry": null
+        },
+        {
+          "name": "serde",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "req": "^1.0",
+          "kind": null,
+          "rename": null,
+          "optional": false,
+          "uses_default_features": true,
+          "features": [
+            "std",
+            "derive",
+            "rc"
+          ],
+          "target": null,
+          "registry": null
+        },
+        {
+          "name": "serde_json",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "req": "^1.0",
+          "kind": null,
+          "rename": null,
+          "optional": false,
+          "uses_default_features": true,
+          "features": [
+            "preserve_order"
+          ],
+          "target": null,
+          "registry": null
+        },
+        {
+          "name": "syn_verus",
+          "source": null,
+          "req": "*",
+          "kind": null,
+          "rename": null,
+          "optional": false,
+          "uses_default_features": true,
+          "features": [
+            "full",
+            "visit",
+            "visit-mut",
+            "extra-traits"
+          ],
+          "target": null,
+          "registry": null,
+          "path": "/Users/flytre/Projects/verus-finite/dependencies/syn"
+        },
+        {
+          "name": "tabled",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "req": "^0.14.0",
+          "kind": null,
+          "rename": null,
+          "optional": false,
+          "uses_default_features": true,
+          "features": [],
+          "target": null,
+          "registry": null
+        },
+        {
+          "name": "toml",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "req": "^0.8",
+          "kind": null,
+          "rename": null,
+          "optional": false,
+          "uses_default_features": true,
+          "features": [],
+          "target": null,
+          "registry": null
+        }
+      ],
+      "targets": [
+        {
+          "kind": [
+            "bin"
+          ],
+          "crate_types": [
+            "bin"
+          ],
+          "name": "line_count",
+          "src_path": "/Users/flytre/Projects/verus-finite/source/tools/line_count/src/main.rs",
+          "edition": "2021",
+          "doc": true,
+          "doctest": false,
+          "test": true
+        }
+      ],
+      "features": {},
+      "manifest_path": "/Users/flytre/Projects/verus-finite/source/tools/line_count/Cargo.toml",
+      "metadata": null,
+      "publish": null,
+      "authors": [],
+      "categories": [],
+      "keywords": [],
+      "readme": "README.md",
+      "repository": null,
+      "homepage": null,
+      "documentation": null,
+      "edition": "2021",
+      "links": null,
+      "default_run": null,
+      "rust_version": null
+    },
+    {
+      "name": "qi-graph",
+      "version": "0.1.0",
+      "id": "qi-graph 0.1.0 (path+file:///Users/flytre/Projects/verus-finite/source/tools/qi-graph)",
+      "license": null,
+      "license_file": null,
+      "description": null,
+      "source": null,
+      "dependencies": [
+        {
+          "name": "bincode",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "req": "^1.3",
+          "kind": null,
+          "rename": null,
+          "optional": false,
+          "uses_default_features": true,
+          "features": [],
+          "target": null,
+          "registry": null
+        },
+        {
+          "name": "getopts",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "req": "*",
+          "kind": null,
+          "rename": null,
+          "optional": false,
+          "uses_default_features": true,
+          "features": [],
+          "target": null,
+          "registry": null
+        },
+        {
+          "name": "internals_interface",
+          "source": null,
+          "req": "*",
+          "kind": null,
+          "rename": null,
+          "optional": false,
+          "uses_default_features": true,
+          "features": [],
+          "target": null,
+          "registry": null,
+          "path": "/Users/flytre/Projects/verus-finite/source/tools/internals_interface"
+        },
+        {
+          "name": "petgraph",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "req": "^0.5.1",
+          "kind": null,
+          "rename": null,
+          "optional": false,
+          "uses_default_features": true,
+          "features": [],
+          "target": null,
+          "registry": null
+        },
+        {
+          "name": "serde",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "req": "^1",
+          "kind": null,
+          "rename": null,
+          "optional": false,
+          "uses_default_features": true,
+          "features": [
+            "derive",
+            "rc"
+          ],
+          "target": null,
+          "registry": null
+        },
+        {
+          "name": "serde_json",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "req": "^1",
+          "kind": null,
+          "rename": null,
+          "optional": false,
+          "uses_default_features": true,
+          "features": [
+            "preserve_order"
+          ],
+          "target": null,
+          "registry": null
+        }
+      ],
+      "targets": [
+        {
+          "kind": [
+            "bin"
+          ],
+          "crate_types": [
+            "bin"
+          ],
+          "name": "qi-graph",
+          "src_path": "/Users/flytre/Projects/verus-finite/source/tools/qi-graph/src/main.rs",
+          "edition": "2021",
+          "doc": true,
+          "doctest": false,
+          "test": true
+        }
+      ],
+      "features": {},
+      "manifest_path": "/Users/flytre/Projects/verus-finite/source/tools/qi-graph/Cargo.toml",
+      "metadata": null,
+      "publish": null,
+      "authors": [],
+      "categories": [],
+      "keywords": [],
+      "readme": "README.md",
+      "repository": null,
+      "homepage": null,
+      "documentation": null,
+      "edition": "2021",
+      "links": null,
+      "default_run": null,
+      "rust_version": null
+    },
+    {
+      "name": "verus-prover-assistant",
+      "version": "0.1.0",
+      "id": "verus-prover-assistant 0.1.0 (path+file:///Users/flytre/Projects/verus-finite/source/verus-prover-assistant)",
+      "license": null,
+      "license_file": null,
+      "description": null,
+      "source": null,
+      "dependencies": [
+        {
+          "name": "builtin_macros",
+          "source": null,
+          "req": "*",
+          "kind": null,
+          "rename": null,
+          "optional": false,
+          "uses_default_features": true,
+          "features": [],
+          "target": null,
+          "registry": null,
+          "path": "/Users/flytre/Projects/verus-finite/source/builtin_macros"
+        },
+        {
+          "name": "clap",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "req": "^4.5",
+          "kind": null,
+          "rename": null,
+          "optional": false,
+          "uses_default_features": true,
+          "features": [
+            "derive"
+          ],
+          "target": null,
+          "registry": null
+        },
+        {
+          "name": "clap_derive",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "req": "^4.5",
+          "kind": null,
+          "rename": null,
+          "optional": false,
+          "uses_default_features": true,
+          "features": [],
+          "target": null,
+          "registry": null
+        },
+        {
+          "name": "miette",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "req": "^3.0",
+          "kind": null,
+          "rename": null,
+          "optional": false,
+          "uses_default_features": true,
+          "features": [],
+          "target": null,
+          "registry": null
+        },
+        {
+          "name": "prettyplease_verus",
+          "source": null,
+          "req": "*",
+          "kind": null,
+          "rename": null,
+          "optional": false,
+          "uses_default_features": true,
+          "features": [],
+          "target": null,
+          "registry": null,
+          "path": "/Users/flytre/Projects/verus-finite/dependencies/prettyplease"
+        },
+        {
+          "name": "proc-macro2",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "req": "^1.0.39",
+          "kind": null,
+          "rename": null,
+          "optional": false,
+          "uses_default_features": true,
+          "features": [],
+          "target": null,
+          "registry": null
+        },
+        {
+          "name": "quote",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "req": "^1.0",
+          "kind": null,
+          "rename": null,
+          "optional": false,
+          "uses_default_features": true,
+          "features": [],
+          "target": null,
+          "registry": null
+        },
+        {
+          "name": "syn",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "req": "^1.0",
+          "kind": null,
+          "rename": null,
+          "optional": false,
+          "uses_default_features": true,
+          "features": [],
+          "target": null,
+          "registry": null
+        },
+        {
+          "name": "syn_verus",
+          "source": null,
+          "req": "*",
+          "kind": null,
+          "rename": null,
+          "optional": false,
+          "uses_default_features": true,
+          "features": [
+            "full",
+            "visit",
+            "visit-mut",
+            "extra-traits"
+          ],
+          "target": null,
+          "registry": null,
+          "path": "/Users/flytre/Projects/verus-finite/dependencies/syn"
+        },
+        {
+          "name": "synstructure",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "req": "^0.12",
+          "kind": null,
+          "rename": null,
+          "optional": false,
+          "uses_default_features": true,
+          "features": [],
+          "target": null,
+          "registry": null
+        },
+        {
+          "name": "verusfmt",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "req": "^0.4.2",
+          "kind": null,
+          "rename": null,
+          "optional": false,
+          "uses_default_features": true,
+          "features": [],
+          "target": null,
+          "registry": null
+        }
+      ],
+      "targets": [
+        {
+          "kind": [
+            "bin"
+          ],
+          "crate_types": [
+            "bin"
+          ],
+          "name": "verus-prover-assistant",
+          "src_path": "/Users/flytre/Projects/verus-finite/source/verus-prover-assistant/src/main.rs",
+          "edition": "2021",
+          "doc": true,
+          "doctest": false,
+          "test": true
+        }
+      ],
+      "features": {},
+      "manifest_path": "/Users/flytre/Projects/verus-finite/source/verus-prover-assistant/Cargo.toml",
+      "metadata": {
+        "rust-analyzer": {
+          "rustc_private": true
+        }
+      },
+      "publish": null,
+      "authors": [],
+      "categories": [],
+      "keywords": [],
+      "readme": null,
+      "repository": null,
+      "homepage": null,
+      "documentation": null,
+      "edition": "2021",
+      "links": null,
+      "default_run": null,
+      "rust_version": null
+    }
+  ],
+  "workspace_members": [
+    "air 0.1.0 (path+file:///Users/flytre/Projects/verus-finite/source/air)",
+    "builtin 0.1.0 (path+file:///Users/flytre/Projects/verus-finite/source/builtin)",
+    "builtin_macros 0.1.0 (path+file:///Users/flytre/Projects/verus-finite/source/builtin_macros)",
+    "vir 0.1.0 (path+file:///Users/flytre/Projects/verus-finite/source/vir)",
+    "vir-macros 0.1.0 (path+file:///Users/flytre/Projects/verus-finite/source/vir_macros)",
+    "rust_verify 0.1.0 (path+file:///Users/flytre/Projects/verus-finite/source/rust_verify)",
+    "internals_interface 0.1.0 (path+file:///Users/flytre/Projects/verus-finite/source/tools/internals_interface)",
+    "rust_verify_test_macros 0.1.0 (path+file:///Users/flytre/Projects/verus-finite/source/rust_verify_test_macros)",
+    "verus 0.1.0 (path+file:///Users/flytre/Projects/verus-finite/source/verus)",
+    "rust_verify_test 0.1.0 (path+file:///Users/flytre/Projects/verus-finite/source/rust_verify_test)",
+    "state_machines_macros 0.1.0 (path+file:///Users/flytre/Projects/verus-finite/source/state_machines_macros)",
+    "verusdoc 0.1.0 (path+file:///Users/flytre/Projects/verus-finite/source/verusdoc)",
+    "vstd_build 0.1.0 (path+file:///Users/flytre/Projects/verus-finite/source/vstd_build)",
+    "line_count 0.1.0 (path+file:///Users/flytre/Projects/verus-finite/source/tools/line_count)",
+    "qi-graph 0.1.0 (path+file:///Users/flytre/Projects/verus-finite/source/tools/qi-graph)",
+    "verus-prover-assistant 0.1.0 (path+file:///Users/flytre/Projects/verus-finite/source/verus-prover-assistant)"
+  ],
+  "workspace_default_members": [
+    "air 0.1.0 (path+file:///Users/flytre/Projects/verus-finite/source/air)",
+    "builtin 0.1.0 (path+file:///Users/flytre/Projects/verus-finite/source/builtin)",
+    "builtin_macros 0.1.0 (path+file:///Users/flytre/Projects/verus-finite/source/builtin_macros)",
+    "vir 0.1.0 (path+file:///Users/flytre/Projects/verus-finite/source/vir)",
+    "vir-macros 0.1.0 (path+file:///Users/flytre/Projects/verus-finite/source/vir_macros)",
+    "rust_verify 0.1.0 (path+file:///Users/flytre/Projects/verus-finite/source/rust_verify)",
+    "internals_interface 0.1.0 (path+file:///Users/flytre/Projects/verus-finite/source/tools/internals_interface)",
+    "rust_verify_test_macros 0.1.0 (path+file:///Users/flytre/Projects/verus-finite/source/rust_verify_test_macros)",
+    "verus 0.1.0 (path+file:///Users/flytre/Projects/verus-finite/source/verus)",
+    "rust_verify_test 0.1.0 (path+file:///Users/flytre/Projects/verus-finite/source/rust_verify_test)",
+    "state_machines_macros 0.1.0 (path+file:///Users/flytre/Projects/verus-finite/source/state_machines_macros)",
+    "verusdoc 0.1.0 (path+file:///Users/flytre/Projects/verus-finite/source/verusdoc)",
+    "vstd_build 0.1.0 (path+file:///Users/flytre/Projects/verus-finite/source/vstd_build)",
+    "line_count 0.1.0 (path+file:///Users/flytre/Projects/verus-finite/source/tools/line_count)",
+    "qi-graph 0.1.0 (path+file:///Users/flytre/Projects/verus-finite/source/tools/qi-graph)",
+    "verus-prover-assistant 0.1.0 (path+file:///Users/flytre/Projects/verus-finite/source/verus-prover-assistant)"
+  ],
+  "resolve": null,
+  "target_directory": "/Users/flytre/Projects/verus-finite/source/target",
+  "version": 1,
+  "workspace_root": "/Users/flytre/Projects/verus-finite/source",
+  "metadata": {
+    "vargo": {
+      "tag": "workspace"
+    }
+  }
+}

@@ -1,0 +1,270 @@
+Body {
+    params: [
+        Param {
+            hir_id: HirId(DefId(0:8 ~ primeEx[feeb]::is_prime).1),
+            pat: Pat {
+                hir_id: HirId(DefId(0:8 ~ primeEx[feeb]::is_prime).2),
+                kind: Binding(
+                    BindingAnnotation(
+                        No,
+                        Not,
+                    ),
+                    HirId(DefId(0:8 ~ primeEx[feeb]::is_prime).2),
+                    candidate#0,
+                    None,
+                ),
+                span: /Users/flytre/Projects/verus-finite/finite_examples/primeEx.rs:17:18: 17:27 (#0),
+                default_binding_modes: true,
+            },
+            ty_span: /Users/flytre/Projects/verus-finite/finite_examples/primeEx.rs:17:29: 17:32 (#0),
+            span: /Users/flytre/Projects/verus-finite/finite_examples/primeEx.rs:17:18: 17:32 (#0),
+        },
+    ],
+    value: Expr {
+        hir_id: HirId(DefId(0:8 ~ primeEx[feeb]::is_prime).68),
+        kind: Block(
+            Block {
+                stmts: [],
+                expr: Some(
+                    Expr {
+                        hir_id: HirId(DefId(0:8 ~ primeEx[feeb]::is_prime).3),
+                        kind: Binary(
+                            Spanned {
+                                node: And,
+                                span: /Users/flytre/Projects/verus-finite/finite_examples/primeEx.rs:19:5: 19:8 (#0),
+                            },
+                            Expr {
+                                hir_id: HirId(DefId(0:8 ~ primeEx[feeb]::is_prime).4),
+                                kind: MethodCall(
+                                    PathSegment {
+                                        ident: spec_lt#0,
+                                        hir_id: HirId(DefId(0:8 ~ primeEx[feeb]::is_prime).5),
+                                        res: Err,
+                                        args: None,
+                                        infer_args: true,
+                                    },
+                                    Expr {
+                                        hir_id: HirId(DefId(0:8 ~ primeEx[feeb]::is_prime).6),
+                                        kind: Call(
+                                            Expr {
+                                                hir_id: HirId(DefId(0:8 ~ primeEx[feeb]::is_prime).7),
+                                                kind: Path(
+                                                    Resolved(
+                                                        None,
+                                                        Path {
+                                                            span: /Users/flytre/Projects/verus-finite/finite_examples/primeEx.rs:18:9: 18:10 (#0),
+                                                            res: Def(
+                                                                Fn,
+                                                                DefId(22:360 ~ builtin[c9e4]::spec_literal_nat),
+                                                            ),
+                                                            segments: [
+                                                                PathSegment {
+                                                                    ident: {{root}}#0,
+                                                                    hir_id: HirId(DefId(0:8 ~ primeEx[feeb]::is_prime).8),
+                                                                    res: Err,
+                                                                    args: None,
+                                                                    infer_args: true,
+                                                                },
+                                                                PathSegment {
+                                                                    ident: builtin#0,
+                                                                    hir_id: HirId(DefId(0:8 ~ primeEx[feeb]::is_prime).9),
+                                                                    res: Def(
+                                                                        Mod,
+                                                                        DefId(22:0 ~ builtin[c9e4]),
+                                                                    ),
+                                                                    args: None,
+                                                                    infer_args: true,
+                                                                },
+                                                                PathSegment {
+                                                                    ident: spec_literal_nat#0,
+                                                                    hir_id: HirId(DefId(0:8 ~ primeEx[feeb]::is_prime).10),
+                                                                    res: Def(
+                                                                        Fn,
+                                                                        DefId(22:360 ~ builtin[c9e4]::spec_literal_nat),
+                                                                    ),
+                                                                    args: None,
+                                                                    infer_args: true,
+                                                                },
+                                                            ],
+                                                        },
+                                                    ),
+                                                ),
+                                                span: /Users/flytre/Projects/verus-finite/finite_examples/primeEx.rs:18:9: 18:10 (#0),
+                                            },
+                                            [
+                                                Expr {
+                                                    hir_id: HirId(DefId(0:8 ~ primeEx[feeb]::is_prime).11),
+                                                    kind: Lit(
+                                                        Spanned {
+                                                            node: Str(
+                                                                "1",
+                                                                Cooked,
+                                                            ),
+                                                            span: /Users/flytre/Projects/verus-finite/finite_examples/primeEx.rs:9:1: 63:2 (#6),
+                                                        },
+                                                    ),
+                                                    span: /Users/flytre/Projects/verus-finite/finite_examples/primeEx.rs:9:1: 63:2 (#6),
+                                                },
+                                            ],
+                                        ),
+                                        span: /Users/flytre/Projects/verus-finite/finite_examples/primeEx.rs:18:9: 18:10 (#0),
+                                    },
+                                    [
+                                        Expr {
+                                            hir_id: HirId(DefId(0:8 ~ primeEx[feeb]::is_prime).12),
+                                            kind: Path(
+                                                Resolved(
+                                                    None,
+                                                    Path {
+                                                        span: /Users/flytre/Projects/verus-finite/finite_examples/primeEx.rs:18:13: 18:22 (#0),
+                                                        res: Local(
+                                                            HirId(DefId(0:8 ~ primeEx[feeb]::is_prime).2),
+                                                        ),
+                                                        segments: [
+                                                            PathSegment {
+                                                                ident: candidate#0,
+                                                                hir_id: HirId(DefId(0:8 ~ primeEx[feeb]::is_prime).13),
+                                                                res: Local(
+                                                                    HirId(DefId(0:8 ~ primeEx[feeb]::is_prime).2),
+                                                                ),
+                                                                args: None,
+                                                                infer_args: true,
+                                                            },
+                                                        ],
+                                                    },
+                                                ),
+                                            ),
+                                            span: /Users/flytre/Projects/verus-finite/finite_examples/primeEx.rs:18:13: 18:22 (#0),
+                                        },
+                                    ],
+                                    /Users/flytre/Projects/verus-finite/finite_examples/primeEx.rs:18:9: 18:22 (#0),
+                                ),
+                                span: /Users/flytre/Projects/verus-finite/finite_examples/primeEx.rs:18:9: 18:22 (#0),
+                            },
+                            Expr {
+                                hir_id: HirId(DefId(0:8 ~ primeEx[feeb]::is_prime).14),
+                                kind: Call(
+                                    Expr {
+                                        hir_id: HirId(DefId(0:8 ~ primeEx[feeb]::is_prime).15),
+                                        kind: Path(
+                                            Resolved(
+                                                None,
+                                                Path {
+                                                    span: /Users/flytre/Projects/verus-finite/finite_examples/primeEx.rs:19:9: 19:83 (#0),
+                                                    res: Def(
+                                                        Fn,
+                                                        DefId(22:244 ~ builtin[c9e4]::forall),
+                                                    ),
+                                                    segments: [
+                                                        PathSegment {
+                                                            ident: {{root}}#0,
+                                                            hir_id: HirId(DefId(0:8 ~ primeEx[feeb]::is_prime).16),
+                                                            res: Err,
+                                                            args: None,
+                                                            infer_args: true,
+                                                        },
+                                                        PathSegment {
+                                                            ident: builtin#0,
+                                                            hir_id: HirId(DefId(0:8 ~ primeEx[feeb]::is_prime).17),
+                                                            res: Def(
+                                                                Mod,
+                                                                DefId(22:0 ~ builtin[c9e4]),
+                                                            ),
+                                                            args: None,
+                                                            infer_args: true,
+                                                        },
+                                                        PathSegment {
+                                                            ident: forall#0,
+                                                            hir_id: HirId(DefId(0:8 ~ primeEx[feeb]::is_prime).18),
+                                                            res: Def(
+                                                                Fn,
+                                                                DefId(22:244 ~ builtin[c9e4]::forall),
+                                                            ),
+                                                            args: None,
+                                                            infer_args: true,
+                                                        },
+                                                    ],
+                                                },
+                                            ),
+                                        ),
+                                        span: /Users/flytre/Projects/verus-finite/finite_examples/primeEx.rs:19:9: 19:83 (#0),
+                                    },
+                                    [
+                                        Expr {
+                                            hir_id: HirId(DefId(0:8 ~ primeEx[feeb]::is_prime).19),
+                                            kind: Closure(
+                                                Closure {
+                                                    def_id: DefId(0:9 ~ primeEx[feeb]::is_prime::{closure#0}),
+                                                    binder: Default,
+                                                    constness: NotConst,
+                                                    capture_clause: Ref,
+                                                    bound_generic_params: [],
+                                                    fn_decl: FnDecl {
+                                                        inputs: [
+                                                            Ty {
+                                                                hir_id: HirId(DefId(0:8 ~ primeEx[feeb]::is_prime).65),
+                                                                kind: Path(
+                                                                    Resolved(
+                                                                        None,
+                                                                        Path {
+                                                                            span: /Users/flytre/Projects/verus-finite/finite_examples/primeEx.rs:19:24: 19:27 (#0),
+                                                                            res: Def(
+                                                                                Struct,
+                                                                                DefId(22:318 ~ builtin[c9e4]::nat),
+                                                                            ),
+                                                                            segments: [
+                                                                                PathSegment {
+                                                                                    ident: nat#0,
+                                                                                    hir_id: HirId(DefId(0:8 ~ primeEx[feeb]::is_prime).66),
+                                                                                    res: Def(
+                                                                                        Struct,
+                                                                                        DefId(22:318 ~ builtin[c9e4]::nat),
+                                                                                    ),
+                                                                                    args: None,
+                                                                                    infer_args: false,
+                                                                                },
+                                                                            ],
+                                                                        },
+                                                                    ),
+                                                                ),
+                                                                span: /Users/flytre/Projects/verus-finite/finite_examples/primeEx.rs:19:24: 19:27 (#0),
+                                                            },
+                                                        ],
+                                                        output: DefaultReturn(
+                                                            /Users/flytre/Projects/verus-finite/finite_examples/primeEx.rs:19:28: 19:28 (#0),
+                                                        ),
+                                                        c_variadic: false,
+                                                        implicit_self: None,
+                                                        lifetime_elision_allowed: false,
+                                                    },
+                                                    body: BodyId {
+                                                        hir_id: HirId(DefId(0:8 ~ primeEx[feeb]::is_prime).22),
+                                                    },
+                                                    fn_decl_span: /Users/flytre/Projects/verus-finite/finite_examples/primeEx.rs:19:15: 19:28 (#0),
+                                                    fn_arg_span: Some(
+                                                        /Users/flytre/Projects/verus-finite/finite_examples/primeEx.rs:19:15: 19:28 (#0),
+                                                    ),
+                                                    movability: None,
+                                                },
+                                            ),
+                                            span: /Users/flytre/Projects/verus-finite/finite_examples/primeEx.rs:19:15: 19:83 (#0),
+                                        },
+                                    ],
+                                ),
+                                span: /Users/flytre/Projects/verus-finite/finite_examples/primeEx.rs:19:9: 19:83 (#0),
+                            },
+                        ),
+                        span: /Users/flytre/Projects/verus-finite/finite_examples/primeEx.rs:18:9: 19:83 (#0),
+                    },
+                ),
+                hir_id: HirId(DefId(0:8 ~ primeEx[feeb]::is_prime).67),
+                rules: DefaultBlock,
+                span: /Users/flytre/Projects/verus-finite/finite_examples/primeEx.rs:17:42: 20:2 (#0),
+                targeted_by_break: false,
+            },
+            None,
+        ),
+        span: /Users/flytre/Projects/verus-finite/finite_examples/primeEx.rs:17:42: 20:2 (#0),
+    },
+    coroutine_kind: None,
+}

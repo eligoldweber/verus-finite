@@ -1,0 +1,19 @@
+[package]
+name = "verus-prover-assistant"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+builtin_macros = { path = "../builtin_macros" }  
+proc-macro2 = "1.0.39"
+quote = "1.0"
+synstructure = "0.12"
+syn = "1.0"
+syn_verus = { path="../../dependencies/syn", features = ["full", "visit", "visit-mut", "extra-traits"] }
+prettyplease_verus = { path="../../dependencies/prettyplease" }
+clap = { version = "4.5", features = ["derive"] }
+clap_derive = "4.5"
+verusfmt = "0.4.2"
+
+[package.metadata.rust-analyzer]
+rustc_private = true
