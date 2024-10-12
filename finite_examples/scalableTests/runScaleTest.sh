@@ -35,15 +35,17 @@ do
     
     # Call the selected Python script based on the parameter
     if [ "$script_to_run" == "prime" ]; then
-        /usr/bin/python3 /Users/edgoldwe/Desktop/Research/oz/verus-finite/finite_examples/scalableTests/prime/scaleTestPrime.py "$input_file" "$output_file" "$int_param"
+        /usr/bin/python3 ../finite_examples/scalableTests/prime/scaleTestPrime.py "$input_file" "$output_file" "$int_param"
     elif [ "$script_to_run" == "primeDataType" ]; then
-        /usr/bin/python3 /Users/edgoldwe/Desktop/Research/oz/verus-finite/finite_examples/scalableTests/primeDataType/scaleTestPrimeDataType.py "$input_file" "$output_file" "$int_param"
+        /usr/bin/python3 ../finite_examples/scalableTests/primeDataType/scaleTestPrimeDataType.py "$input_file" "$output_file" "$int_param"
     elif [ "$script_to_run" == "primeOverflow" ]; then
-        /usr/bin/python3 /Users/edgoldwe/Desktop/Research/oz/verus-finite/finite_examples/scalableTests/primeOverflow/scaleTestPrimeOverflow.py "$input_file" "$output_file" "$int_param"
+        /usr/bin/python3 ../finite_examples/scalableTests/primeOverflow/scaleTestPrimeOverflow.py "$input_file" "$output_file" "$int_param"
     elif [ "$script_to_run" == "triangle" ]; then
-        /usr/bin/python3 /Users/edgoldwe/Desktop/Research/oz/verus-finite/finite_examples/scalableTests/triangle/scaleTestTriangle.py "$input_file" "$output_file" "$int_param"
+        /usr/bin/python3 ../finite_examples/scalableTests/triangle/scaleTestTriangle.py "$input_file" "$output_file" "$int_param"
     elif [ "$script_to_run" == "triangle3" ]; then
-        /usr/bin/python3 /Users/edgoldwe/Desktop/Research/oz/verus-finite/finite_examples/scalableTests/triangle/scaleTestTriangle3.py "$input_file" "$output_file" "$int_param"
+        /usr/bin/python3 ../finite_examples/scalableTests/triangle/scaleTestTriangle3.py "$input_file" "$output_file" "$int_param"
+    elif [ "$script_to_run" == "indexUpTo" ]; then
+        /usr/bin/python3 ../finite_examples/scalableTests/indexUpTo/scaleTestIndexUpTo.py "$input_file" "$output_file" "$int_param"
     else
         echo "Unknown script specified: $script_to_run. Use 'prime' or 'triangle'."
         exit 1
@@ -69,7 +71,7 @@ do
         ./target-verus/release/verus --log-all --time-expanded --rlimit=30000000 "$output_file" > "$temp_output_file" 2>&1
         
         # Check the Verus output file
-        if [[ $(head -n 1 "$temp_output_file") == *"0 errors"* ]]; then
+        if grep -q "0 errors" "$temp_output_file"; then
             # Extract total time
             total_time_exec=$(grep "total-time:" "$temp_output_file" | awk '{print $2}')
             total_time=$(echo "$total_time + $total_time_exec" | bc)  # Accumulate total time
