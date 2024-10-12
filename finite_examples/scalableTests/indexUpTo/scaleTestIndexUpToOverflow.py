@@ -12,12 +12,11 @@ def transform_function(lines, int_param):
     new_lines = []
     functions = []
 
-    # Generate functions from 1 to 98
-    for param in range(1, 99):
+    # Generate functions from 1 to int_param
+    for param in range(1, int_param + 1):
         functions.append(f"fn indexUpTo_finite_{param}() -> (f: Vec<u32>)\n")
         functions.append(f"    ensures f.len() == {param}, \n")
         
-        # Remove the condition for param == 1
         if param == 1:
             functions.append(f"             f[0] == 0,\n")
         else:
@@ -25,7 +24,6 @@ def transform_function(lines, int_param):
             functions.append(f"             f[{param}-1] != 0,\n")
         
         functions.append("{\n")
-        
         if param == 1:
             functions.append("    let mut v: Vec<u32> = Vec::new();\n")
             functions.append("    v.push(0);\n")
@@ -39,35 +37,6 @@ def transform_function(lines, int_param):
         
         functions.append("    return v;\n")
         functions.append("}\n\n")
-
-    # Generate function for indexUpTo_finite_99
-    if int_param >= 99:
-        functions.append(f"fn indexUpTo_finite_99() -> (f: Vec<u32>)\n")
-        functions.append(f"    ensures f.len() == 99, \n")
-        functions.append(f"             f[0] == 0,\n")
-        functions.append(f"             f[99-1] != 0,\n")
-        functions.append("{\n")
-        functions.append("    let mut v: Vec<u32> = indexUpTo_finite_98();\n")
-        functions.append("    let mut i:u32 = 98;\n")
-        functions.append("    if(i < 99) {\n")
-        functions.append("        v.push(i);\n")
-        functions.append("    }\n")
-        functions.append("    return v;\n")
-        functions.append("}\n\n")
-
-    # Now, add the function for the requested int_param
-    functions.append(f"fn indexUpTo_finite_{int_param}() -> (f: Vec<u32>)\n")
-    functions.append(f"    ensures f.len() == {int_param}, \n")
-    functions.append(f"             f[0] == 0,\n")
-    functions.append(f"             f[{int_param}-1] != 0,\n")
-    functions.append("{\n")
-    functions.append(f"    let mut v: Vec<u32> = indexUpTo_finite_{int_param - 1}();\n")
-    functions.append(f"    let mut i:u32 = {int_param - 1};\n")
-    functions.append(f"    if (i < {int_param}) {{\n")
-    functions.append("        v.push(i);\n")
-    functions.append("    }\n")
-    functions.append("    return v;\n")
-    functions.append("}\n\n")
 
     # Process the lines to replace the original indexUpTo function
     function_started = False
