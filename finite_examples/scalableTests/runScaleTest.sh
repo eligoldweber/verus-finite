@@ -46,8 +46,10 @@ do
         /usr/bin/python3 ../finite_examples/scalableTests/triangle/scaleTestTriangle3.py "$input_file" "$output_file" "$int_param"
     elif [ "$script_to_run" == "indexUpTo" ]; then
         /usr/bin/python3 ../finite_examples/scalableTests/indexUpTo/scaleTestIndexUpTo.py "$input_file" "$output_file" "$int_param"
+    elif [ "$script_to_run" == "bsearch" ]; then
+        /usr/bin/python3 ../finite_examples/scalableTests/bsearch/scaleTestBSearch.py "$input_file" "$output_file" "$int_param"
     else
-        echo "Unknown script specified: $script_to_run. Use 'prime' or 'triangle'."
+        echo "Unknown script specified: $script_to_run."
         exit 1
     fi
 done
