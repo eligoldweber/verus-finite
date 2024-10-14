@@ -66,7 +66,8 @@ set datafile separator ","
 # plot "$csv_file" using 1:$(($num_executions + 1)) with linespoints title 'Average Total Time' lc rgb "blue" 
 # EOF
 # plot "$csv_file" using 1:$(($num_executions + 1)):($(($num_executions + 2)) * 1) with errorbars title 'Average Total Time' lc rgb "blue" pointtype 7
-plot "$csv_file" using 2:$(($num_executions + 2)):$(($num_executions + 3)) with errorbars title 'Average Total Time' lc rgb "blue" pointtype 7
+# plot "$csv_file" using 2:$(($num_executions + 2)):$(($num_executions + 3)) with errorbars title 'Average Total Time' lc rgb "blue" pointtype 5
+plot "$csv_file" using 1:$(($num_executions + 1)):$(($num_executions + 3)) with errorbars title 'Average Total Time' lc rgb "blue" pointtype 5
 
 # plot "$csv_file" using 1:$(($num_executions + 1)) with linespoints title 'Average Total Time' lc rgb "blue", '' using 1:$(($num_executions + 2)) with linespoints title 'Standard Deviation' lc rgb "red"
 EOF
