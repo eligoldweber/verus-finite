@@ -16,7 +16,7 @@ input_base=$(basename "$input_file" .rs)  # Strip the .rs extension
 
 # CSV file paths
 time_log_csv="$input_dir/${input_base}_time_log.csv"
-summary_csv="$input_dir/${input_base}_summary.csv"
+summary_csv="$input_dir/${input_base}_time_log_summary.csv"
 
 # Generate the plot for the summary CSV
 gnuplot << EOF
@@ -36,12 +36,13 @@ stats "$summary_csv" using 2 nooutput
 # Ensure the max value is greater than -1
 set yrange [-1:STATS_max_y]
 
+# Draw horizontal lines
+set arrow from 0, 1000 to 100, 1000 nohead lt 1 lc rgb "red" lw 2
+set arrow from 0, 5000 to 100, 5000 nohead lt 1 lc rgb "green" lw 2
+set arrow from 0, 10000 to 100, 10000 nohead lt 1 lc rgb "blue" lw 2
+
 # Plot the average and standard deviation
 plot "$summary_csv" using 1:2:3 with errorbars title 'Average Total Time' lc rgb "blue" pointtype 5
-    #  '' using 1:3 with errorbars title 'Standard Deviation' lc rgb "red" pt 5
-
-    #  plot "$csv_file" using 1:$(($num_executions + 1)):$(($num_executions + 3)) with errorbars title 'Average Total Time' lc rgb "blue" pointtype 5
-
 EOF
 
 echo "Plot generated: ${input_base}_summary_plot.png"
