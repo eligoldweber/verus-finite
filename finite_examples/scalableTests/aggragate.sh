@@ -25,67 +25,64 @@ echo "ID,Sum of Averages,Standard Deviation" > "$summary_csv_file"  # Initialize
 # Temporary file to store trial times
 temp_file=$(mktemp)
 
-# Read the original CSV file, skipping the header
+# Read the original CSV file, skipping the header and capturing IDs
+declare -A unique_ids
 while IFS=, read -r id rest; do
     if [[ "$id" != "ID" ]]; then  # Skip header
         echo "$id,$rest" >> "$temp_file"  # Store ID with trial times
+        unique_ids["$id"]=1  # Mark ID as seen
     fi
 done < "$input_csv_file"
 
-# Sort the temporary file by ID
-sort -t, -k1,1 "$temp_file" -o "$temp_file"
+# Collect and sort the unique IDs numerically
+sorted_ids=($(echo "${!unique_ids[@]}" | tr ' ' '\n' | sort -n))
 
-# Process each unique ID
-ids=()  # Initialize an array for unique IDs
-while IFS=, read -r id rest; do
-    if [[ ! " ${ids[*]} " =~ " $id " ]]; then
-        ids+=("$id")  # Add ID to list if not already present
-        
-        # Extract averages for the current ID
-        sum_of_averages=0
-        count=0
+# Process each unique ID in sorted order
+for id in "${sorted_ids[@]}"; do
+    # Initialize sums and counts
+    sum_of_averages=0
+    count=0
 
+    while IFS=, read -r curr_id rest; do
+        if [ "$curr_id" == "$id" ]; then
+            IFS=',' read -r -a times <<< "$rest"
+            if [[ "${#times[@]}" -gt 1 ]]; then  # Ensure there are enough elements
+                avg="${times[${#times[@]}-2]}"  # Get the average from the second-to-last position
+                if [[ "$avg" != "-1" ]]; then  # Only sum valid averages
+                    sum_of_averages=$(echo "$sum_of_averages + $avg" | bc)
+                    count=$((count + 1))
+                fi
+            fi
+        fi
+    done < "$temp_file"
+
+    # Calculate population standard deviation from the averages
+    stddev=0
+    if (( count > 0 )); then
+        mean=$(echo "scale=2; $sum_of_averages / $count" | bc)
+        sum_of_squares=0
+
+        # Calculate the squared differences
         while IFS=, read -r curr_id rest; do
             if [ "$curr_id" == "$id" ]; then
                 IFS=',' read -r -a times <<< "$rest"
-                if [[ "${#times[@]}" -gt 1 ]]; then  # Ensure there are enough elements
-                    avg="${times[${#times[@]}-2]}"  # Get the average from the second-to-last position
-                    if [[ "$avg" != "-1" ]]; then  # Only sum valid averages
-                        sum_of_averages=$(echo "$sum_of_averages + $avg" | bc)
-                        count=$((count + 1))
+                if [[ "${#times[@]}" -gt 1 ]]; then
+                    avg="${times[${#times[@]}-2]}"
+                    if [[ "$avg" != "-1" ]]; then
+                        sum_of_squares=$(echo "$sum_of_squares + ($avg - $mean)^2" | bc)
                     fi
                 fi
             fi
         done < "$temp_file"
 
-        # Calculate population standard deviation from the averages
-        stddev=0
-        if (( count > 0 )); then
-            mean=$(echo "scale=2; $sum_of_averages / $count" | bc)
-            sum_of_squares=0
-
-            # Calculate the squared differences
-            while IFS=, read -r curr_id rest; do
-                if [ "$curr_id" == "$id" ]; then
-                    IFS=',' read -r -a times <<< "$rest"
-                    if [[ "${#times[@]}" -gt 1 ]]; then
-                        avg="${times[${#times[@]}-2]}"
-                        if [[ "$avg" != "-1" ]]; then
-                            sum_of_squares=$(echo "$sum_of_squares + ($avg - $mean)^2" | bc)
-                        fi
-                    fi
-                fi
-            done < "$temp_file"
-
-            # Final calculation of standard deviation
-            variance=$(echo "scale=2; $sum_of_squares / $count" | bc)
-            stddev=$(echo "scale=2; sqrt($variance)" | bc)
-        fi
-
-        # Store results in the summary CSV
-        echo "$id,$sum_of_averages,$stddev" >> "$summary_csv_file"
+        # Final calculation of standard deviation
+        variance=$(echo "scale=2; $sum_of_squares / $count" | bc)
+        stddev=$(echo "scale=2; sqrt($variance)" | bc)
     fi
-done < "$temp_file"
+
+    # Store results in the summary CSV
+    echo "$id,$sum_of_averages,$stddev" >> "$summary_csv_file"
+done
 
 # Cleanup temporary file
 rm "$temp_file"
