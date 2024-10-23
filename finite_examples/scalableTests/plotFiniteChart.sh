@@ -64,10 +64,16 @@ set datafile separator ","
 
 # Plot the average data from the CSV file, skipping the header
 # plot "$csv_file" using 1:$(($num_executions + 1)) with linespoints title 'Average Total Time' lc rgb "blue" 
-# EOF
+
+f(x) = m*x+b
+fit f(x) "$csv_file" using 1:$(($num_executions + 1)):$(($num_executions + 3)) via m,b
+
 # plot "$csv_file" using 1:$(($num_executions + 1)):($(($num_executions + 2)) * 1) with errorbars title 'Average Total Time' lc rgb "blue" pointtype 7
 # plot "$csv_file" using 2:$(($num_executions + 2)):$(($num_executions + 3)) with errorbars title 'Average Total Time' lc rgb "blue" pointtype 5
-plot "$csv_file" using 1:$(($num_executions + 1)):$(($num_executions + 3)) with errorbars title 'Average Total Time' lc rgb "blue" pointtype 5
+plot "$csv_file" using 1:$(($num_executions + 1)):$(($num_executions + 3)) with errorbars title 'Average Total Time' lc rgb "blue" pointtype 5, \
+     '' using 1:$(($num_executions + 1)) smooth sbezier title 'Trendline' lc rgb "red" lw 7 , f(x) title 'fit'
 
+# plot "$csv_file" using 1:$(($num_executions + 1)):$(($num_executions + 3)) with errorbars title 'Average Total Time' lc rgb "blue" pointtype 5, f(x) title 'fit'
+# plot 
 # plot "$csv_file" using 1:$(($num_executions + 1)) with linespoints title 'Average Total Time' lc rgb "blue", '' using 1:$(($num_executions + 2)) with linespoints title 'Standard Deviation' lc rgb "red"
 EOF

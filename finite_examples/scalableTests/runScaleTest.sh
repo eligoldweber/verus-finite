@@ -23,7 +23,7 @@ rm -f "$input_dir/"*.csv
 
 # CSV file to log total time
 csv_file="$input_dir/${input_base}_time_log.csv"
-echo "ID,$(seq -s ',' 1 $num_executions)Average,Standard Deviation" > "$csv_file"  # Initialize the CSV file
+echo "ID,$(seq -s ',' 1 $num_executions),Average,Standard Deviation" > "$csv_file"  # Initialize the CSV file
 
 # Loop from 1 to n
 for (( int_param=1; int_param<=n; int_param++ ))
@@ -40,6 +40,8 @@ do
         /usr/bin/python3 ../finite_examples/scalableTests/primeDataType/scaleTestPrimeDataType.py "$input_file" "$output_file" "$int_param"
     elif [ "$script_to_run" == "primeOverflow" ]; then
         /usr/bin/python3 ../finite_examples/scalableTests/primeOverflow/scaleTestPrimeOverflow.py "$input_file" "$output_file" "$int_param"
+    elif [ "$script_to_run" == "primeRange" ]; then
+        /usr/bin/python3 ../finite_examples/scalableTests/primeRange/scaleTestPrimeRange.py "$input_file" "$output_file" "$int_param"
     elif [ "$script_to_run" == "triangle" ]; then
         /usr/bin/python3 ../finite_examples/scalableTests/triangle/scaleTestTriangle.py "$input_file" "$output_file" "$int_param"
     elif [ "$script_to_run" == "triangle3" ]; then
@@ -48,8 +50,12 @@ do
         /usr/bin/python3 ../finite_examples/scalableTests/indexUpTo/scaleTestIndexUpTo.py "$input_file" "$output_file" "$int_param"
     elif [ "$script_to_run" == "indexUpToOverflow" ]; then
         /usr/bin/python3 ../finite_examples/scalableTests/indexUpTo/scaleTestIndexUpToOverflow.py "$input_file" "$output_file" "$int_param"
+    elif [ "$script_to_run" == "indexUpToRange" ]; then
+        /usr/bin/python3 ../finite_examples/scalableTests/indexUpToRange/scaleTestIndexUpTo.py "$input_file" "$output_file" "$int_param"
     elif [ "$script_to_run" == "bsearch" ]; then
         /usr/bin/python3 ../finite_examples/scalableTests/bsearch/scaleTestBSearch.py "$input_file" "$output_file" "$int_param"
+    elif [ "$script_to_run" == "bsearchRange" ]; then
+        /usr/bin/python3 ../finite_examples/scalableTests/bsearchRange/scaleTestBsearchRange.py "$input_file" "$output_file" "$int_param"
     else
         echo "Unknown script specified: $script_to_run."
         exit 1
