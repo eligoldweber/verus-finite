@@ -22,7 +22,7 @@ summary_csv="$input_dir/${input_base}_time_log_summary.csv"
 gnuplot << EOF
 set terminal pngcairo size 3200,1600 enhanced
 set output '$input_dir/${input_base}_summary_plot.png'
-set title "Average and Standard Deviation for Each ID"
+set title "Cummulative Average and Standard Deviation for Each ID"
 set xlabel "ID"
 set ylabel "Time (ms)"
 set grid
@@ -42,7 +42,7 @@ set arrow from 0, 5000 to 100, 5000 nohead lt 1 lc rgb "green" lw 2
 set arrow from 0, 10000 to 100, 10000 nohead lt 1 lc rgb "blue" lw 2
 
 # Plot the average and standard deviation
-plot "$summary_csv" using 1:2:3 with errorbars title 'Average Total Time' lc rgb "blue" pointtype 5
+plot "$summary_csv" using 1:2:3 with errorbars title 'Cummulative (average) Time' lc rgb "blue" pointtype 5
 EOF
 
 echo "Plot generated: ${input_base}_summary_plot.png"
