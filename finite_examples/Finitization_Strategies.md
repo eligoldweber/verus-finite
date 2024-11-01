@@ -3,6 +3,16 @@
 [WIP] Manual heuristics for finitizing failed queries. These are meant to finitize failed queries, using the failed assertions as a reference to perform the finitization. 
 
 The automation of finitiziation must trace backwards creating a call path from the failing verification condition to the initial caller and finitize everything (possible) between.
+### High level workflow
+
+Order of Operations
+1) Check pre-con concerning var
+    * Yes
+        * Check relationships/dependencies
+    * No
+        * perform "always" range (these are a default set of ranges)
+
+
 
 ### Function Parameters -- Push-Down
     
@@ -105,6 +115,43 @@ To finitize `forall|factor: nat| 1 < factor < candidate ==> !divides(factor, can
 &&& !divides(9, 11)
 &&& !divides(10, 11)
 ```
+
+###### Unknown Bounds
+
+In this above example, the number of times needed to enumerate the forall was based on a concrete bound, but this may not always be the case!
+If the upperbound for the forall is a "range" value, then the enumeration form must be done differently since the upper bound may not be set. For example if `candidate` was not a concrete value, but rather restricted to a finite range. i.e. `1 < candidate <= 11`. The enumeration can be built where a conditional is set with an implication.
+
+```
+&&& candidate >= 3 ==> !divides(2, 3) 
+&&& candidate >= 4 ==> !divides(2, 4) && !divides(3, 4)
+...
+```
+
+For the binary search example: 
+```
+
+fn binary_search(v: &Vec<u64>, k: u64) -> (r: usize)
+    requires
+        forall|i: int, j: int| 0 <= i <= j < v.len() ==> v[i] <= v[j],
+        exists|i: int| 0 <= i < v.len() && k == v[i],
+        ...
+```
+
+There is some mechanism to determine the bound range for `v` and `k`, but assume that the range of the vector is `1 < v.len() <= 3`, and all values are between 0 and 100, then the preconditions can be enumerated as:
+```
+v.len() >=1 
+v.len() <=3     
+v.len() >= 1 ==> (v[0] >= 0 && v[0] < 100)
+v.len() >= 2 ==> (v[1] >= 0 && v[1] < 100)
+v.len() >= 3 ==> (v[2] >= 0 && v[2] < 100)     
+k >= 0 && k < 100
+v.len() >= 1 ==> (v[0] < v[0])
+v.len() >= 2 ==> (v[0] < v[1] && v[1] < v[1])
+v.len() >= 3 ==> (v[0] < [2] && v[1] < v[2] && v[2] < v[2])
+k == v[0] || k == v[1] || k == v[2]
+```
+
+
 
 ##### Existential 
 
